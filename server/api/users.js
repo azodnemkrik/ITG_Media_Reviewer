@@ -10,4 +10,13 @@ app.get('/', async(req,res,next)=> {
 })
 
 
+app.get('/me', async(req,res,next)=> {
+    try {
+        res.send("inside of GET /api/users/me route!")
+    } catch (error) {
+        next(error)
+    }
+})
+
+
 module.exports = app
