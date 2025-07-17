@@ -5,6 +5,7 @@ import Banners from './components/banners';
 import Home from './components/Home';
 import SingleBanner from './components/SingleBanner';
 import Navigation from './components/Navigation';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -19,8 +20,8 @@ function App() {
   useEffect(() => {
     const fetchBanners = async () => {
       try {
-        const { data } = await axios.get('http://localhost:3000/api/banners')
-        console.log(data)
+        const { data } = await axios.get('/api/banners')
+        console.log("data:", data)
         setAllBanners(data)
       } catch (error) {
         console.error(error)
@@ -35,7 +36,7 @@ function App() {
       if(!token){
         throw Error("No token was found!")
       }
-      const response = await axios.get('http://localhost:3000/api/users/me')
+      const response = await axios.get('/api/users/me')
     } catch (error) {
       console.error(error)
     }
@@ -44,16 +45,16 @@ function App() {
   // Displayed Items
   return (
     <div>
-      <h3>template</h3>
-      <Navigation pathname={ pathname }/>
+      <Navigation user={user} pathname={ pathname }/>
 
 			<Routes>
-				<Route path="/" element={<Home />} />
+				<Route path="/" element={<Home user={user}/>} />
 				<Route path="/projects" element={<Banners allBanners={allBanners} setAllBanners={setAllBanners} />} />
-				<Route path="/banners" element={<Banners allBanners={allBanners} setAllBanners={setAllBanners} />} />
+				<Route path="/banners" element={<Banners allBanners={allBanners} />} />
 				<Route path="/banners/:id" element={<SingleBanner allBanners={allBanners}  />} />
 
       </Routes>    
+      <Footer pathname={ pathname } />
     </div>
   )
 }
