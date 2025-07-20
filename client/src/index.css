@@ -1,104 +1,303 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', Helvetica, Arial, Lucida, sans-serif;
+	margin: 0;
+	padding: 0;
+	font-family: 'Poppins', Helvetica, Arial, Lucida, sans-serif;
+}
+
+/* MAIN */
+#root {
+	height: 100%;
+	/* display: flex; */
+	/* justify-content: center; */
+	background-color: #1c3454;
+}
+
+.stage {
+	height: 100vh;
 }
 
 /* Navigation Styles */
 nav {
-    display: flex;
-    justify-content: space-between;
-    gap: 100px;
-    align-items: center;
-    background-color: #DB1C97;
-    padding: .25rem;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 1.25rem;
+	display: flex;
+	justify-content: space-between;
+	gap: 100px;
+	align-items: center;
+	background-color: #DB1C97;
+	padding: .25rem;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	cursor: pointer;
+	font-weight: 600;
+	font-size: 1.25rem;
 }
+
 .nav {
-    display: flex;
-    align-items: center;    
-    width: 50%;
-    height: 5rem;
+	display: flex;
+	align-items: center;
+	width: 50%;
+	height: 5rem;
 }
 
 .navLeft {
-    /* justify-content: center; */
-    align-items: center;
-    /* flex-wrap: nowrap; */
-    /* flex-direction: column; */
-    /* justify-content: start; */
-    /* gap: 3rem; */
-    width: 50%;
-    gap: 1rem;
-    /* height: 100%; */
-    padding-left: 3rem;
+	/* justify-content: center; */
+	align-items: center;
+	/* flex-wrap: nowrap; */
+	/* flex-direction: column; */
+	/* justify-content: start; */
+	/* gap: 3rem; */
+	width: 50%;
+	gap: 1rem;
+	/* height: 100%; */
+	padding-left: 3rem;
 }
 
-.navLeft img, .itgLogo {
-    align-self: center;
-    margin: 0;
-    padding: 0;
+.navLeft img,
+.itgLogo {
+	align-self: center;
+	margin: 0;
+	padding: 0;
 }
 
 .navLeft p {
-    font-weight: 400;
-    font-size: 1.5em;
-    color: #FFFFFF;
-    margin: 0;
-    padding: 0;
-} 
+	font-weight: 400;
+	font-size: 1.5em;
+	color: #FFFFFF;
+	margin: 0;
+	padding: 0;
+}
 
 .navRight {
-    justify-content: end;
-    gap: 3rem;
-    width: 50%;
-    padding-right: 3rem;
-    height: 100%;
+	justify-content: end;
+	gap: 3rem;
+	width: 50%;
+	padding-right: 3rem;
+	height: 100%;
+}
+
+.userAvatarContainer {
+	width: 64px;
+	height: 64px;
+	/* display: flex; */
+	/* align-items: center; */
+	/* justify-content: flex-end; */
+	/* gap: 10px; */
+	border-radius: 1000px;
+	background-color: #FFFFFF;
+	transition: .25s ease-in-out;
+	overflow: hidden;
+
+	.logoutButton{
+		width: 0px;
+		overflow: hidden;
+	}
+}
+
+.userAvatarContainer:hover {
+	width: 170px;
+	padding: 0;
+
+	.logoutButton{
+		width: 100px;
+	}
+}
+
+
+.logoutButton {
+	width: 100px;
+	height: 40px;
+	top: 20px;
+	right: 60px;
+	font-size: 1rem;
+	cursor: pointer;
+	color: #DB1C97;
+	background-color: #ffffff;
+	border: 1px solid #ffffff;
+	font-family: 'Poppins', Helvetica, Arial, Lucida, sans-serif;
+	transition: .25s ease-in-out;
+}	
+
+.userAvatar {
+	top: 8px;
+	width: 60px;
+	/* right: 0; */
+	/* height: 50%; */
+	border-radius: 50%;
+	border: 2px solid #FFFFFF;
 }
 
 a {
-    color: #1c3454;
-    text-decoration: none;
+	color: #1c3454;
+	text-decoration: none;
 }
 
 .float {
-    position: absolute;
-    display: block;
+	position: absolute;
+	display: block;
 }
 
 .itgLogo {
-    width: 40px;
-    height: 40px;
+	width: 40px;
+	height: 40px;
 }
 
 .footer {
-    position: fixed;
-    display: flex;
-    bottom: 0;
-    width: 100%;
-    background-color: #1f2d3d;
-    color: #1c3454;
-    text-align: center;
-    padding: 10px 0;
+	position: fixed;
+	display: flex;
+	bottom: 0;
+	width: 100%;
+	background-color: #1f2d3d;
+	color: #ffffff;
+	text-align: center;
+	padding: 10px 0;
 }
 
 /* Single Banner */
 .singleBanner {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-    justify-content: start;
-    gap: 0;
-    /* padding: 20px; */
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: center;
+	justify-content: start;
+	gap: 0;
+	/* padding: 20px; */
 }
 
 .projectStyle {
-    font-weight: 600;
-    color: #DB1C97;
+	font-weight: 600;
+	color: #DB1C97;
+}
+
+
+/* REGISTER */
+.formContainer {
+	display: flex;
+	justify-content: center;
+	padding-top: 10vh;
+	padding-bottom: 10vh;
+}
+
+.itgForm {
+	display: flex;
+	flex-wrap: wrap;
+	width: 600px;
+	min-width: 600px;
+	padding: 2vh;
+	color: #FFFFFF;
+	background-color: #FFFFFF;
+	border-radius: 20px;
+	/* border: 3px solid #000000; */
+	padding: 0;
+	/* margin: 0; */
+	overflow: hidden;
+
+}
+
+.registerForm > label > input {
+	width: 98%;
+	height: 2rem;
+	font-size: 1rem;
+}
+
+/* .registerForm > button {
+	margin-top: 20px;
+	align-self: center;
+	width: 50%;
+	height: 30px;
+} */
+
+.formTop {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: #DB1C97;
+}
+
+.formBottom {
+	width: 100%;
+	/* height: 100%; */
+	/* margin: 0; */
+	color: #000000;
+	padding: 20px 40px;
+	background-color: #FFFFFF;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.loginBox{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.textLink {
+	text-decoration: none;
+	color: #DB1C97;
+}
+
+.one-column-layout {
+	display: grid;
+	grid-template-columns: 1fr;
+}
+
+.two-column-layout {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+
+.formLogo {
+	padding-top: 30px;
+	width: 122px;
+	/* height: 1rem; */
+}
+
+input {
+	width: 400px;
+	height: 1.5rem;
+	margin-bottom: 12px;
+}
+
+form button {
+	justify-self: center;
+	align-self: center;
+	width: 150px;
+	height: 50px;
+	border-radius: 1000px;
+	/* margin-top: 40px; */
+	font-size: 1rem;
+	cursor: pointer;
+	color: #FFFFFF;
+	background-color: #DB1C97;
+	border: 1px solid #DB1C97;
+	font-family: 'Poppins', Helvetica, Arial, Lucida, sans-serif;
+	transition: .15s;
+}
+
+
+form button:hover {
+	color: #DB1C97;
+	background-color: #FFFFFF;
+}
+
+.logoAndName {
+	width: 60%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 10px;
+}
+
+.logoAndName h1 {
+	font-size: 3rem;
+	line-height: 3rem;
+	padding-top: 1.5rem;
 }
