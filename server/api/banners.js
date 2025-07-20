@@ -3,10 +3,12 @@ const app = express.Router()
 
 const {
     fetchBanners,
-    fetchSingleBanner
+    fetchSingleBanner,
+    fetchStoryboard
 } = require('../db/banners')
+const { isLoggedIn } = require('./middleware')
 
-app.get('/', async (req , res , next) => {
+app.get('/', async (req, res, next) => {
     try {
         res.send(await fetchBanners())
     } catch (error) {
@@ -15,7 +17,7 @@ app.get('/', async (req , res , next) => {
 })
 
 
-app.get('/:id', async (req , res , next) => {
+app.get('/:id', async (req, res, next) => {
     try {
         console.log('API route called with ID:', req.params.id)
         const result = await fetchSingleBanner(req.params.id)
@@ -27,6 +29,13 @@ app.get('/:id', async (req , res , next) => {
     }
 })
 
+app.get('/storyboard/:id', async (req, res, next) => {
+    try {
+        res.send(await fetchStoryboard(req.params.id))
+    } catch (error) {
+        next(error)
+    }
 
+})
 
 module.exports = app

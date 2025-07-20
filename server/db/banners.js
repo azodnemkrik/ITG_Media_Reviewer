@@ -24,6 +24,32 @@ const createBanner = async (banner) => {
 
 }
 
+// CREATE Storyboard
+const createStoryboard = async (storyboard) => {
+    const SQL = `
+        INSERT INTO storyboards
+        (id, banner_id)
+        VALUES
+        ($1, $2)
+        RETURNING *
+    `
+    const response = await client.query(SQL, [uuidv4(), storyboard.banner_id])
+    return response.rows[0]
+}
+
+// CREATE Frame
+const createFrame = async (frame) => {
+    const SQL = `
+        INSERT INTO frames
+        (id, storyboard_id, link)
+        VALUES
+        ($1, $2, $3)
+        RETURNING *
+    `
+    const response = await client.query(SQL, [uuidv4(), frame.storyboard_id, frame.link])
+    return response.rows[0]
+}
+
 // READ
 const fetchBanners = async () => {
     const SQL = `
@@ -47,11 +73,27 @@ const fetchSingleBanner = async (bannerId) => {
     console.log('First row:', response.rows[0])
     return response.rows[0]
 }
+
+const fetchStoryboard = async (bannerId) => {
+    console.log('fetchStoryboard called with ID:', bannerId)
+    const SQL = `
+        SELECT *
+        FROM storyboards
+        WHERE banner_id = $1
+    `
+    const response = await client.query(SQL, [bannerId])
+    console.log('Storyboard:', response.rows[0])
+    return response.rows[0]
+}
+
 // UPDATE
 // DELETE
 
 module.exports = {
     createBanner,
     fetchBanners,
-    fetchSingleBanner
+    fetchSingleBanner,
+    fetchStoryboard,
+    createStoryboard,
+    createFrame
 }

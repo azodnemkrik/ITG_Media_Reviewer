@@ -45,9 +45,22 @@ const createCreative = async (creative) => {
 
 }
 
+// READ PROJECTS
+const fetchProjects = async () => {
+    const SQL = `
+        SELECT *
+        FROM projects
+    `
+    const response = await client.query(SQL)
+    console.log('Project:', response.rows[0])
+    return response.rows
+}
+
+
 module.exports = {
     createProject,
-    createCreative
+    createCreative,
+    fetchProjects
 }
 
 

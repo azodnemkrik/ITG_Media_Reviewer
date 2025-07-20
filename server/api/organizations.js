@@ -1,14 +1,14 @@
 const express = require('express')
 const app = express.Router()
 
-const { 
-    fetchProjects
-} = require('../db/projects')
+const {
+    fetchOrganizations
+} = require('../db/organizations')
 
 
 app.get('/', async (req, res, next) => {
     try {
-        res.send(await fetchProjects())
+        res.send(await fetchOrganizations())
     } catch (error) {
         next(error)
     }

@@ -22,8 +22,19 @@ const createOrganization = async (organization) => {
     return response.rows[0]
 }
 
+// READ ORGANIZATIONS
+const fetchOrganizations = async () => {
+    const SQL = `
+        SELECT *
+        FROM organizations
+    `
+    const response = await client.query(SQL)
+    return response.rows
+}
+
 module.exports = {
-    createOrganization
+    createOrganization,
+    fetchOrganizations
 }
 
 

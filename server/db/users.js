@@ -5,8 +5,8 @@ const uuidv4 = v4
 
 // CREATE USER
 const createUser = async (user) => {
-    // Check for spaces in username
-    if (!user.username.trim()) {
+    // Check for spaces in email
+    if (!user.email.trim()) {
         throw Error('You must have a valid email')
     }
 
@@ -34,7 +34,7 @@ const createUser = async (user) => {
     // Generate SQL to Pass
     const SQL = `
         INSERT INTO users
-        (id, first_name, last_name, username, password, org_code, is_admin, avatar)
+        (id, first_name, last_name, email, password, org_code, is_admin, avatar)
         VALUES
         ($1, $2, $3, $4, $5, $6, $7, $8)
         RETURNING *
@@ -46,7 +46,7 @@ const createUser = async (user) => {
         uuidv4(),
         user.first_name,
         user.last_name,
-        user.username,
+        user.email,
         user.password,
         user.org_code,
         user.is_admin,

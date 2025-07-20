@@ -9,6 +9,14 @@ app.get('/', async(req,res,next)=> {
     }
 })
 
+app.post('/register', async(req,res,next)=> {
+    try {
+        res.send("inside of POST /api/users/register route!")
+    } catch (error) {
+        next(error)
+    }
+})
+
 
 app.get('/me', async(req,res,next)=> {
     try {
