@@ -82,7 +82,7 @@ function App() {
 			}
 		}
 		fetchProjects()
-	}, [])
+	}, [user.id])
 
 	useEffect(() => {
 		const fetchOrganizations = async () => {
@@ -110,8 +110,8 @@ function App() {
 		const token = window.localStorage.getItem('token')
 		if (token) {
 			try {
-				const { data } = await axios.get('api/auth/me', getHeaders())
-				console.log("attemptLoginWithToken:", {data})
+				const { data } = await axios.get('/api/auth/me', getHeaders())
+				console.log("attemptLoginWithToken:", { data })
 				setUser(data)
 			} catch (error) {
 				console.log(error)
@@ -129,8 +129,8 @@ function App() {
 
 	useEffect(() => {
 		attemptLoginWithToken()
-	}, [user])
-	
+	}, [])
+
 	// Displayed Items
 	return (
 		<div className='stage' style={{
@@ -143,7 +143,7 @@ function App() {
 
 			<Routes>
 				<Route path="/" element={<Home user={user} />} />
-				<Route path="/projects" element={<Projects allProjects={allProjects} />} />
+				<Route path="/projects" element={<Projects allProjects={allProjects} allBanners={allBanners} user={user} />} />
 				<Route path="/banners" element={<Banners allBanners={allBanners} allFrames={allFrames} />} />
 				<Route path="/banners/:id" element={<SingleBanner allBanners={allBanners} allStoryboards={allStoryboards} allFrames={allFrames} />} />
 				<Route path="/register" element={<Register />} />

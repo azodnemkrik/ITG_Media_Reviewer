@@ -19,6 +19,7 @@ const Navigation = ({ user, pathname, logout }) => {
                                     <>
                                         <p><Link to="/banners" className={pathname === "/banners" ? "selected" : ""}>My Banners</Link></p>
                                         <p><Link to="/projects" className={pathname === "/projects" ? "selected" : ""}>My Projects</Link></p>
+                                        <p><Link to="/organizations" className={pathname === "/organizations" ? "selected" : ""}>My Organizations</Link></p>
                                         <p>My Account</p>
                                         <div className="userAvatarContainer">
                                             <button className="float logoutButton" onClick={logout}>Logout</button>
