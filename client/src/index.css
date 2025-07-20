@@ -35,7 +35,7 @@ nav {
 .nav {
 	display: flex;
 	align-items: center;
-	width: 50%;
+	/* width: 50%; */
 	height: 5rem;
 }
 
@@ -78,13 +78,11 @@ nav {
 .userAvatarContainer {
 	width: 64px;
 	height: 64px;
-	/* display: flex; */
-	/* align-items: center; */
-	/* justify-content: flex-end; */
-	/* gap: 10px; */
 	border-radius: 1000px;
+    -webkit-border-radius: 1000px;
 	background-color: #FFFFFF;
 	transition: .25s ease-in-out;
+    -webkit-transition: .25s ease-in-out;
 	overflow: hidden;
 
 	.logoutButton{
@@ -96,6 +94,8 @@ nav {
 .userAvatarContainer:hover {
 	width: 170px;
 	padding: 0;
+    transition: .25s ease-in-out;
+	-webkit-transition: .25s ease-in-out;
 
 	.logoutButton{
 		width: 100px;
@@ -115,6 +115,9 @@ nav {
 	border: 1px solid #ffffff;
 	font-family: 'Poppins', Helvetica, Arial, Lucida, sans-serif;
 	transition: .25s ease-in-out;
+	-webkit-transition: .25s ease-in-out;
+    border-radius: 1000px;
+    -webkit-border-radius: 1000px;
 }	
 
 .userAvatar {
@@ -123,8 +126,10 @@ nav {
 	/* right: 0; */
 	/* height: 50%; */
 	border-radius: 50%;
+    -webkit-border-radius: 50%;
 	border: 2px solid #FFFFFF;
-}
+    transition: .25s ease-in-out;
+    -webkit-transition: .25s ease-in-out;}
 
 a {
 	color: #1c3454;
@@ -300,4 +305,9 @@ form button:hover {
 	font-size: 3rem;
 	line-height: 3rem;
 	padding-top: 1.5rem;
+}
+
+/* Organizations */
+.orgLogo {
+	height: 70px;
 }

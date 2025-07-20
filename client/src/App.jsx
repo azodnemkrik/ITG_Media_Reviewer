@@ -9,13 +9,17 @@ import Footer from './components/Site/Footer';
 import Register from './components/Auth/Register';
 import pinkWaves from './assets/pink-waves-background.png'
 import Login from './components/Auth/Login';
+import Projects from './components/Products/Projects';
+import Organizations from './components/Products/Organizations';
 
 
 function App() {
 	const [allBanners, setAllBanners] = useState([])
 	const [allStoryboards, setAllStoryboards] = useState([])
 	const [allFrames, setAllFrames] = useState([])
+	const [allProjects, setAllProjects] = useState([])
 	const [user, setUser] = useState({})
+	const [allOrganizations, setAllOrganizations] = useState([])
 
 	const navigate = useNavigate()
 	const location = useLocation()
@@ -66,6 +70,33 @@ function App() {
 		fetchStoryboards()
 	}, [])
 
+	// Fetch All Projects
+	useEffect(() => {
+		const fetchProjects = async () => {
+			try {
+				const { data } = await axios.get('/api/projects')
+				console.log('PROJECTS:', data)
+				setAllProjects(data)
+			} catch (error) {
+				console.error(error)
+			}
+		}
+		fetchProjects()
+	}, [])
+
+	useEffect(() => {
+		const fetchOrganizations = async () => {
+			try {
+				const { data } = await axios.get('/api/organizations')
+				console.log('ORGANIZATIONS:', data)
+				setAllOrganizations(data)
+			} catch (error) {
+				console.error(error)
+			}
+		}
+		fetchOrganizations()
+	}, [])
+
 
 	const getHeaders = () => {
 		return {
@@ -112,10 +143,11 @@ function App() {
 
 			<Routes>
 				<Route path="/" element={<Home user={user} />} />
-				<Route path="/projects" element={<Banners allBanners={allBanners} setAllBanners={setAllBanners} />} />
+				<Route path="/projects" element={<Projects allProjects={allProjects} />} />
 				<Route path="/banners" element={<Banners allBanners={allBanners} allFrames={allFrames} />} />
 				<Route path="/banners/:id" element={<SingleBanner allBanners={allBanners} allStoryboards={allStoryboards} allFrames={allFrames} />} />
 				<Route path="/register" element={<Register />} />
+				<Route path="/organizations" element={<Organizations allOrganizations={allOrganizations} />} />
 				<Route path="/login" element={<Login attemptLoginWithToken={attemptLoginWithToken} />} />
 
 			</Routes>

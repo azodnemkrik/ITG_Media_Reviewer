@@ -17,7 +17,7 @@ const Navigation = ({ user, pathname, logout }) => {
                             {
                                 user.id ? (
                                     <>
-                                        <p><Link to="/banners" className={pathname === "/banners" ? "selected" : ""}>Banners I can see</Link></p>
+                                        <p><Link to="/banners" className={pathname === "/banners" ? "selected" : ""}>My Banners</Link></p>
                                         <p><Link to="/projects" className={pathname === "/projects" ? "selected" : ""}>My Projects</Link></p>
                                         <p>My Account</p>
                                         <div className="userAvatarContainer">

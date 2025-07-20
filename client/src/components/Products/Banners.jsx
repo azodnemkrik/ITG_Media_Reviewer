@@ -2,9 +2,6 @@ import { Link } from "react-router-dom"
 
 const Banners = ({ allBanners }) => {
 
-    
-
-
     return (
         <div>
             {
