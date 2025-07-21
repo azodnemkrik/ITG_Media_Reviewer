@@ -1,8 +1,10 @@
 const client = require('./client');
 const { createOrganization } = require('./organizations');
 const { createUser } = require('./users');
-const { createBanner, createStoryboard , createFrame } = require('./banners');
-const { createProject, createCreative } = require('./projects');
+const { createBanner } = require('./banners');
+const { createProject } = require('./projects');
+const { createCreative } = require('./creatives');
+const { createStoryboard , fetchStoryboards , createFrame , fetchFrames } = require('./storyboards');
 const path = require('path')
 const fs = require('fs')
 
@@ -172,11 +174,11 @@ const seed = async () => {
     createBanner({ creative_id: creative3.id, creative_name: creative3.creative_name, org_code:prj3.org_code, job_number: prj3.job_number , width: 300, height: 250, is_mobile: true, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/300x250/R7/index.html' }),
 
     // Remarketing Interactive
-    createBanner({ creative_id: creative4.id, creative_name: creative4.creative_name, org_code:prj4.org_code, job_number: prj4.job_number , width: 300, height: 250, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/300x600/R3/index.html' }),
-    createBanner({ creative_id: creative4.id, creative_name: creative4.creative_name, org_code:prj4.org_code, job_number: prj4.job_number , width: 300, height: 600, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/160x600/R3/index.html' }),
-    createBanner({ creative_id: creative4.id, creative_name: creative4.creative_name, org_code:prj4.org_code, job_number: prj4.job_number , width: 160, height: 600, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/728x90/R2/index.html' }),
-    createBanner({ creative_id: creative4.id, creative_name: creative4.creative_name, org_code:prj4.org_code, job_number: prj4.job_number , width: 728, height: 90, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Hotspot/Prospecting_300x250_V1/R1/index.html' }),
-    createBanner({ creative_id: creative4.id, creative_name: creative4.creative_name, org_code:prj4.org_code, job_number: prj4.job_number , width: 300, height: 250, is_mobile: true, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Hotspot/Remarketing_300x250_V2/R5/index.html' }),
+    createBanner({ creative_id: creative4.id, creative_name: creative4.creative_name, org_code:prj3.org_code, job_number: prj3.job_number , width: 300, height: 600, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/300x600/R3/index.html' }),
+    createBanner({ creative_id: creative4.id, creative_name: creative4.creative_name, org_code:prj3.org_code, job_number: prj3.job_number , width: 160, height: 600, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/160x600/R3/index.html' }),
+    createBanner({ creative_id: creative4.id, creative_name: creative4.creative_name, org_code:prj3.org_code, job_number: prj3.job_number , width: 728, height: 90, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/728x90/R2/index.html' }),
+    createBanner({ creative_id: creative4.id, creative_name: creative4.creative_name, org_code:prj3.org_code, job_number: prj3.job_number , width: 300, height: 250, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Hotspot/Prospecting_300x250_V1/R1/index.html' }),
+    createBanner({ creative_id: creative4.id, creative_name: creative4.creative_name, org_code:prj3.org_code, job_number: prj3.job_number , width: 300, height: 250, is_mobile: true, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Hotspot/Remarketing_300x250_V2/R5/index.html' }),
 
     // XBox Q2 - We Got You
     createBanner({ creative_id: creative5.id, creative_name: creative5.creative_name, org_code:prj5.org_code, job_number: prj5.job_number , width: 300, height: 250, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_02_XboxQ2Campaigns/WeGotYouSuperSet/300x250/cod/R6/We_Got_You_300x250.html' }),

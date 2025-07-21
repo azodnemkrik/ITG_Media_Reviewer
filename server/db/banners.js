@@ -22,33 +22,34 @@ const createBanner = async (banner) => {
     const response = await client.query(SQL , [uuidv4(), banner.width, banner.height, banner.job_number, banner.org_code, banner.creative_id, banner.creative_name, banner.is_mobile, banner.link])
     return response.rows[0]
 
+    
 }
 
 // CREATE Storyboard
-const createStoryboard = async (storyboard) => {
-    const SQL = `
-        INSERT INTO storyboards
-        (id, banner_id)
-        VALUES
-        ($1, $2)
-        RETURNING *
-    `
-    const response = await client.query(SQL, [uuidv4(), storyboard.banner_id])
-    return response.rows[0]
-}
+// const createStoryboard = async (storyboard) => {
+//     const SQL = `
+//         INSERT INTO storyboards
+//         (id, banner_id)
+//         VALUES
+//         ($1, $2)
+//         RETURNING *
+//     `
+//     const response = await client.query(SQL, [uuidv4(), storyboard.banner_id])
+//     return response.rows[0]
+// }
 
 // CREATE Frame
-const createFrame = async (frame) => {
-    const SQL = `
-        INSERT INTO frames
-        (id, storyboard_id, link)
-        VALUES
-        ($1, $2, $3)
-        RETURNING *
-    `
-    const response = await client.query(SQL, [uuidv4(), frame.storyboard_id, frame.link])
-    return response.rows[0]
-}
+// const createFrame = async (frame) => {
+//     const SQL = `
+//         INSERT INTO frames
+//         (id, storyboard_id, link)
+//         VALUES
+//         ($1, $2, $3)
+//         RETURNING *
+//     `
+//     const response = await client.query(SQL, [uuidv4(), frame.storyboard_id, frame.link])
+//     return response.rows[0]
+// }
 
 // READ
 const fetchBanners = async () => {
@@ -86,6 +87,23 @@ const fetchStoryboard = async (bannerId) => {
     return response.rows[0]
 }
 
+// const fetchFrames = async (storyboardId) => {
+//     console.log('fetchFrames called with ID:', storyboardId)
+//     const SQL = `
+//         SELECT *
+//         FROM frames
+//         WHERE storyboard_id = $1
+//     `
+//     const response = await client.query(SQL, [storyboardId])
+//     console.log('Frames:', response.rows)
+//     return response.rows
+// }
+/**
+      id UUID PRIMARY KEY,
+      storyboard_id UUID REFERENCES storyboards(id),
+      link TEXT NOT NULL
+ */
+
 // UPDATE
 // DELETE
 
@@ -93,7 +111,8 @@ module.exports = {
     createBanner,
     fetchBanners,
     fetchSingleBanner,
-    fetchStoryboard,
-    createStoryboard,
-    createFrame
+    fetchStoryboard
+    // fetchFrames,
+    // createStoryboard,
+    // createFrame
 }
