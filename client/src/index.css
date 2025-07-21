@@ -79,13 +79,13 @@ nav {
 	width: 64px;
 	height: 64px;
 	border-radius: 1000px;
-    -webkit-border-radius: 1000px;
+	-webkit-border-radius: 1000px;
 	background-color: #FFFFFF;
 	transition: .25s ease-in-out;
-    -webkit-transition: .25s ease-in-out;
+	-webkit-transition: .25s ease-in-out;
 	overflow: hidden;
 
-	.logoutButton{
+	.logoutButton {
 		width: 0px;
 		overflow: hidden;
 	}
@@ -94,10 +94,10 @@ nav {
 .userAvatarContainer:hover {
 	width: 170px;
 	padding: 0;
-    transition: .25s ease-in-out;
+	transition: .25s ease-in-out;
 	-webkit-transition: .25s ease-in-out;
 
-	.logoutButton{
+	.logoutButton {
 		width: 100px;
 	}
 }
@@ -116,9 +116,9 @@ nav {
 	font-family: 'Poppins', Helvetica, Arial, Lucida, sans-serif;
 	transition: .25s ease-in-out;
 	-webkit-transition: .25s ease-in-out;
-    border-radius: 1000px;
-    -webkit-border-radius: 1000px;
-}	
+	border-radius: 1000px;
+	-webkit-border-radius: 1000px;
+}
 
 .userAvatar {
 	top: 8px;
@@ -126,10 +126,11 @@ nav {
 	/* right: 0; */
 	/* height: 50%; */
 	border-radius: 50%;
-    -webkit-border-radius: 50%;
+	-webkit-border-radius: 50%;
 	border: 2px solid #FFFFFF;
-    transition: .25s ease-in-out;
-    -webkit-transition: .25s ease-in-out;}
+	transition: .25s ease-in-out;
+	-webkit-transition: .25s ease-in-out;
+}
 
 a {
 	color: #1c3454;
@@ -198,7 +199,7 @@ a {
 
 }
 
-.registerForm > label > input {
+.registerForm>label>input {
 	width: 98%;
 	height: 2rem;
 	font-size: 1rem;
@@ -236,11 +237,31 @@ a {
 	flex-direction: column;
 }
 
-.loginBox{
+.loginBox {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	flex-direction: column;
+}
+
+.two-column-form-left {
+	width: 90%;
+}
+
+.two-column-form-right {
+	width: 90%;
+	margin-left: 10px;
+}
+
+.bumpLabel-right {
+	margin-left: 10px;
+}
+
+.hint {
+	font-style: italic;
+	font-size: 0.8rem;
+	color: #DB1C97;
+	margin-top: 5px;
 }
 
 .textLink {

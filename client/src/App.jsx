@@ -18,6 +18,7 @@ function App() {
 	const [allStoryboards, setAllStoryboards] = useState([])
 	const [allFrames, setAllFrames] = useState([])
 	const [allProjects, setAllProjects] = useState([])
+	const [allCreatives, setAllCreatives] = useState([])
 	const [user, setUser] = useState({})
 	const [allOrganizations, setAllOrganizations] = useState([])
 
@@ -97,6 +98,21 @@ function App() {
 		fetchOrganizations()
 	}, [])
 
+	// allCreatives
+
+	useEffect(() => {
+		const fetchCreatives = async () => {
+			try {
+				const { data } = await axios.get('/api/creatives')
+				console.log('CREATIVES:', data)
+				setAllCreatives(data)
+			} catch (error) {
+				console.error(error)
+			}
+		}
+		fetchCreatives()
+	}, [])
+
 
 	const getHeaders = () => {
 		return {
@@ -142,8 +158,8 @@ function App() {
 			<Navigation user={user} pathname={pathname} logout={logout} />
 
 			<Routes>
-				<Route path="/" element={<Home user={user} />} />
-				<Route path="/projects" element={<Projects allProjects={allProjects} allBanners={allBanners} user={user} />} />
+				<Route path="/" element={<Home user={user} attemptLoginWithToken={attemptLoginWithToken} />} />
+				<Route path="/projects" element={<Projects allProjects={allProjects} allBanners={allBanners} allCreatives={allCreatives} user={user} />} />
 				<Route path="/banners" element={<Banners allBanners={allBanners} allFrames={allFrames} />} />
 				<Route path="/banners/:id" element={<SingleBanner allBanners={allBanners} allStoryboards={allStoryboards} allFrames={allFrames} />} />
 				<Route path="/register" element={<Register />} />

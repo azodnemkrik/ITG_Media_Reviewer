@@ -1,6 +1,7 @@
+import { all } from "axios"
 import { Link, useNavigate } from "react-router-dom"
 
-const Projects = ({ allProjects, allBanners, user }) => {
+const Projects = ({ allProjects, allBanners, allCreatives, user }) => {
     const navigate = useNavigate()
     return (
         <div>
@@ -14,23 +15,37 @@ const Projects = ({ allProjects, allBanners, user }) => {
                         // Show ONLY CLIENT's Projects
                         allProjects
                             .filter(project => project.org_code === user.org_code)
+                            // .filter(project => project.job_number === banner.job_number)
                             .map(project => (
                                 <div>
-                                    <h3>{user.first_name} {user.last_name}, {user.org_code}</h3>
-                                    <h3>Organization: {project.org_code}</h3>
-                                    <p>Job Number: {project.job_number}</p>
-                                    <ul>
+                                    {/* <h3>Organization: {user.org_code}</h3> */}
+                                    <h3>{project.org_code}-{project.job_number}</h3>
                                     {
-                                         allBanners.filter(banner => banner.job_number === project.job_number).map(banner => (
-                                             <li key={banner.id}>
-                                                 <Link to={`/banners/${banner.id}`}>
-                                                     Banner: {banner.width} x {banner.height}
-                                                 </Link>
-                                             </li>
-                                         ))
+                                        allCreatives
+                                            .filter((creative) => creative.job_number === project.job_number)
+                                            .map((creative) => (
+                                                <>
+                                                    <div key={creative.id}>
+                                                        <h4>{creative.creative_name}</h4>
+                                                    </div>
+                                                    <ul>
+                                                        {
+                                                            allBanners
+                                                                .filter(banner => banner.creative_name === creative.creative_name)
+                                                                .map(banner => (
+                                                                    <li key={banner.id}>
+                                                                        <Link to={`/banners/${banner.id}`}>
+                                                                            Banner: {banner.width} x {banner.height}
+                                                                        </Link>
+                                                                    </li>
+                                                                ))
+                                                        }
+                                                    </ul>
+                                                </>
+
+                                            ))
                                     }
-                                    </ul>
-                                    <hr />
+                                    <hr></hr>
                                 </div>
                             ))
                     ) : (
@@ -38,23 +53,36 @@ const Projects = ({ allProjects, allBanners, user }) => {
                         allProjects
                             .map(project => (
                                 <div>
-                                    <h3>{user.first_name} {user.last_name}, {user.org_code}</h3>
-                                    <h3>Organization: {project.org_code}</h3>
-                                    <p>Job Number: {project.job_number}</p>
-                                    <ul>
+                                    {/* <h3>Organization: {user.org_code}</h3> */}
+                                    <h3>{project.org_code}-{project.job_number}</h3>
                                     {
-                                         allBanners.filter(banner => banner.job_number === project.job_number).map(banner => (
-                                             <li key={banner.id}>
-                                                 <Link to={`/banners/${banner.id}`}>
-                                                     Banner: {banner.width} x {banner.height}
-                                                 </Link>
-                                             </li>
-                                         ))
+                                        allCreatives
+                                            .filter((creative) => creative.job_number === project.job_number)
+                                            .map((creative) => (
+                                                <>
+                                                    <div key={creative.id}>
+                                                        <h4>{creative.creative_name}</h4>
+                                                    </div>
+                                                    <ul>
+                                                        {
+                                                            allBanners
+                                                                .filter(banner => banner.creative_name === creative.creative_name)
+                                                                .map(banner => (
+                                                                    <li key={banner.id}>
+                                                                        <Link to={`/banners/${banner.id}`}>
+                                                                            Banner: {banner.width} x {banner.height}
+                                                                        </Link>
+                                                                    </li>
+                                                                ))
+                                                        }
+                                                    </ul>
+                                                </>
+
+                                            ))
                                     }
-                                    </ul>
-                                    <hr />
+                                    <hr></hr>
                                 </div>
-                        ))
+                            ))
                     )
 
                 ) : (
