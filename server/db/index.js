@@ -66,6 +66,7 @@ const seed = async () => {
     CREATE TABLE creatives (
       id UUID PRIMARY KEY,
       creative_name VARCHAR(100) UNIQUE NOT NULL,
+      org_code VARCHAR(8) REFERENCES organizations(org_code),
       job_number VARCHAR(100) REFERENCES projects(job_number),
       CONSTRAINT job_and_creative UNIQUE(job_number, creative_name)
     );
@@ -136,17 +137,17 @@ const seed = async () => {
 
   // CREATE CREATIVES
   const [creative1, creative2, creative3, creative4, creative5, creative6, creative7, creative8, creative9, creative10, creative11] = await Promise.all([
-    createCreative({ creative_name: 'Doom: The Dark Ages', job_number: prj1.job_number }),
-    createCreative({ creative_name: 'Interactive Demo Pitch', job_number: prj2.job_number }),
-    createCreative({ creative_name: 'Prospecting Interactive', job_number: prj3.job_number }),
-    createCreative({ creative_name: 'Remarketing Interactive', job_number: prj3.job_number }),
-    createCreative({ creative_name: 'XBox Q2 - We Got You', job_number: prj4.job_number }),
-    createCreative({ creative_name: 'FY24_BTS_2024', job_number: prj5.job_number }),
-    createCreative({ creative_name: 'FY24_New_Year_2024', job_number: prj6.job_number }),
-    createCreative({ creative_name: 'FY24 Holiday 2023', job_number: prj7.job_number }),
-    createCreative({ creative_name: 'XBox Starfield Forza Performance', job_number: prj8.job_number }),
-    createCreative({ creative_name: 'Neutral Evergreen', job_number: prj9.job_number }),
-    createCreative({ creative_name: 'XBox Q2 - Avowed', job_number: prj4.job_number })
+    createCreative({ creative_name: 'Doom: The Dark Ages', org_code: xbox.org_code, job_number: prj1.job_number }),
+    createCreative({ creative_name: 'Interactive Demo Pitch', org_code: other.org_code, job_number: prj2.job_number }),
+    createCreative({ creative_name: 'Prospecting Interactive', org_code: charter.org_code, job_number: prj3.job_number }),
+    createCreative({ creative_name: 'Remarketing Interactive', org_code: charter.org_code, job_number: prj3.job_number }),
+    createCreative({ creative_name: 'XBox Q2 - We Got You', org_code: xbox.org_code, job_number: prj4.job_number }),
+    createCreative({ creative_name: 'FY24_BTS_2024', org_code: microsoft.org_code, job_number: prj5.job_number }),
+    createCreative({ creative_name: 'FY24_New_Year_2024', org_code: microsoft.org_code, job_number: prj6.job_number }),
+    createCreative({ creative_name: 'FY24 Holiday 2023', org_code: microsoft.org_code, job_number: prj7.job_number }),
+    createCreative({ creative_name: 'XBox Starfield Forza Performance', org_code: xbox.org_code, job_number: prj8.job_number }),
+    createCreative({ creative_name: 'Neutral Evergreen', org_code: microsoft.org_code, job_number: prj9.job_number }),
+    createCreative({ creative_name: 'XBox Q2 - Avowed', org_code: xbox.org_code, job_number: prj4.job_number })
   ])
 
   // CREATE STARTER BANNERS
