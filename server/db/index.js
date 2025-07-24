@@ -4,7 +4,7 @@ const { createUser } = require('./users');
 const { createBanner } = require('./banners');
 const { createProject } = require('./projects');
 const { createCreative } = require('./creatives');
-const { createStoryboard , fetchStoryboards , createFrame , fetchFrames } = require('./storyboards');
+const { createFrame , fetchFrames } = require('./frames');
 const path = require('path')
 const fs = require('fs')
 
@@ -84,16 +84,11 @@ const seed = async () => {
       CONSTRAINT creative_and_banner UNIQUE(creative_id, id)
     );
 
-    CREATE TABLE storyboards(
+    CREATE TABLE frames(
       id UUID PRIMARY KEY,
       banner_id UUID REFERENCES banners(id),
-      CONSTRAINT banner_and_storyboard UNIQUE(banner_id, id)
-    );
-
-    CREATE TABLE frames (
-      id UUID PRIMARY KEY,
-      storyboard_id UUID REFERENCES storyboards(id),
-      link TEXT NOT NULL
+      link TEXT NOT NULL, 
+      CONSTRAINT banner_and_frame UNIQUE(banner_id, id)
     );
 
   `
@@ -155,7 +150,7 @@ const seed = async () => {
     banner1, banner2, banner3, banner4, banner5, banner6, banner7, banner8, banner9, banner10, 
     banner11, banner12, banner13, banner14, banner15, banner16, banner17, banner18, banner19, banner20, 
     banner21, banner22, banner23, banner24, banner25, banner26, banner27, banner28, banner29, banner30, 
-    banner31, banner32, banner33, banner34, banner35, banner36, banner37, banner38, banner39, banner40, 
+    banner31, banner32, banner33, banner34, banner35, banner36, banner37, banner38 
   ] = await Promise.all([
     // Doom: The Dark Ages
     createBanner({ creative_id: creative1.id, creative_name: creative1.creative_name, org_code:prj1.org_code, job_number: prj1.job_number , width: 300, height: 250, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/300x250/R9/index.html' }),
@@ -167,14 +162,14 @@ const seed = async () => {
     // Interactive Demo Pitch
     createBanner({ creative_id: creative2.id, creative_name: creative2.creative_name, org_code:prj2.org_code, job_number: prj2.job_number , width: 300, height: 600, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/23_FLOOR_012907_Interactive_Demo_Pitch/300x600/R4/Interactive_Demo_Pitch.html' }),
 
-    // Prospecting Interactive
+    // CHTR Prospecting Interactive
     createBanner({ creative_id: creative3.id, creative_name: creative3.creative_name, org_code:prj3.org_code, job_number: prj3.job_number , width: 300, height: 250, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/300x250/R6/index.html' }),
     createBanner({ creative_id: creative3.id, creative_name: creative3.creative_name, org_code:prj3.org_code, job_number: prj3.job_number , width: 300, height: 600, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/300x600/R3/index.html' }),
     createBanner({ creative_id: creative3.id, creative_name: creative3.creative_name, org_code:prj3.org_code, job_number: prj3.job_number , width: 160, height: 600, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/160x600/R2/index.html' }),
     createBanner({ creative_id: creative3.id, creative_name: creative3.creative_name, org_code:prj3.org_code, job_number: prj3.job_number , width: 728, height: 90, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/728x90/R3/index.html' }),
     createBanner({ creative_id: creative3.id, creative_name: creative3.creative_name, org_code:prj3.org_code, job_number: prj3.job_number , width: 300, height: 250, is_mobile: true, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/300x250/R7/index.html' }),
 
-    // Remarketing Interactive
+    // CHTR Remarketing Interactive
     createBanner({ creative_id: creative4.id, creative_name: creative4.creative_name, org_code:prj3.org_code, job_number: prj3.job_number , width: 300, height: 600, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/300x600/R3/index.html' }),
     createBanner({ creative_id: creative4.id, creative_name: creative4.creative_name, org_code:prj3.org_code, job_number: prj3.job_number , width: 160, height: 600, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/160x600/R3/index.html' }),
     createBanner({ creative_id: creative4.id, creative_name: creative4.creative_name, org_code:prj3.org_code, job_number: prj3.job_number , width: 728, height: 90, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/728x90/R2/index.html' }),
@@ -220,46 +215,136 @@ const seed = async () => {
   ])
 
   // CREATE STARTER STORYBOARDS
-  const [storyboard1, storyboard2, storyboard3, storyboard4, storyboard5] = await Promise.all([
-    createStoryboard({ banner_id: banner1.id }),
-    createStoryboard({ banner_id: banner2.id }),
-    createStoryboard({ banner_id: banner3.id }),
-    createStoryboard({ banner_id: banner4.id }),
-    createStoryboard({ banner_id: banner5.id })
-  ])
+  // const [storyboard1, storyboard2, storyboard3, storyboard4, storyboard5] = await Promise.all([
+  //   createStoryboard({ banner_id: banner1.id }), 
+  //   createStoryboard({ banner_id: banner2.id }),
+  //   createStoryboard({ banner_id: banner3.id }),
+  //   createStoryboard({ banner_id: banner4.id }),
+  //   createStoryboard({ banner_id: banner5.id })
+  // ])
 
   // CREATE STARTER FRAMES
-  const [frame1, frame2, frame3, frame4, frame5] = await Promise.all([
+  const [frame1, frame2, frame3, frame4, frame5, frame6, frame7, frame8, frame9, frame10,
+    frame11, frame12, frame13, frame14, frame15, frame16, frame17, frame18, frame19, frame20,
+    frame21, frame22, frame23, frame24, frame25, frame26, frame27, frame28, frame29, frame30,
+    frame31, frame32, frame33, frame34, frame35, frame36, frame37, frame38, frame39, frame40,
+    frame41, frame42, frame43, frame44, frame45, frame46, frame47, frame48, frame49, frame50,
+    frame51, frame52, frame53, frame54, frame55, frame56, frame57, frame58, frame59, frame60,
+    frame61, frame62, frame63, frame64, frame65
+  ] = await Promise.all([
     // Doom: The Dark Ages, 300x250
-    createFrame({ storyboard_id: storyboard1.id, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/300x250/R9/ref/ref1.png' }),
-    createFrame({ storyboard_id: storyboard1.id, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/300x250/R9/ref/ref2.png' }),
+    createFrame({ banner_id: banner1.id, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/300x250/R9/ref/ref1.png' }),
+    createFrame({ banner_id: banner1.id, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/300x250/R9/ref/ref2.png' }),
 
     // Doom: The Dark Ages, 300x600
-    createFrame({ storyboard_id: storyboard2.id, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/300x600/R5/ref/ref1.png' }),
-    createFrame({ storyboard_id: storyboard2.id, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/300x600/R5/ref/ref2.png' }),
+    createFrame({ banner_id: banner2.id, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/300x600/R5/ref/ref1.png' }),
+    createFrame({ banner_id: banner2.id, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/300x600/R5/ref/ref2.png' }),
 
     // Doom: The Dark Ages, 160x600
-    createFrame({ storyboard_id: storyboard3.id, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/160x600/R6/ref/ref1.png' }),
-    createFrame({ storyboard_id: storyboard3.id, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/160x600/R6/ref/ref2.png' }),
+    createFrame({ banner_id: banner3.id, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/160x600/R6/ref/ref1.png' }),
+    createFrame({ banner_id: banner3.id, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/160x600/R6/ref/ref2.png' }),
 
     // Doom: The Dark Ages, 728x90
-    createFrame({ storyboard_id: storyboard4.id, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/728x90/R4/ref/ref1.png' }),
-    createFrame({ storyboard_id: storyboard4.id, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/728x90/R4/ref/ref2.png' }),
+    createFrame({ banner_id: banner4.id, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/728x90/R4/ref/ref1.png' }),
+    createFrame({ banner_id: banner4.id, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/728x90/R4/ref/ref2.png' }),
 
     // Doom: The Dark Ages, 970x250
-    createFrame({ storyboard_id: storyboard5.id, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/970x250/R4/ref/ref1.png' }),
-    createFrame({ storyboard_id: storyboard5.id, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/970x250/R4/ref/ref2.png' })
-  ])
-/*
-    CREATE TABLE storyboards(
-      id UUID PRIMARY KEY,
-      banner_id UUID REFERENCES banners(id)
-    );
+    createFrame({ banner_id: banner5.id, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/970x250/R4/ref/ref1.png' }),
+    createFrame({ banner_id: banner5.id, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/970x250/R4/ref/ref2.png' }),
 
-    CREATE TABLE frames (
+    // CHTR Prospecting Interactive, 300x250
+    createFrame({ banner_id: banner7.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/300x250/R6/ref/ref1.png' }),
+    createFrame({ banner_id: banner7.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/300x250/R6/ref/ref2.png' }),
+    createFrame({ banner_id: banner7.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/300x250/R6/ref/ref3.png' }),
+    createFrame({ banner_id: banner7.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/300x250/R6/ref/ref4.png' }),
+    createFrame({ banner_id: banner7.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/300x250/R6/ref/ref5.png' }),
+
+    // CHTR Prospecting Interactive, 300x600
+    createFrame({ banner_id: banner8.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/300x600/R3/ref/ref1.png' }),
+    createFrame({ banner_id: banner8.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/300x600/R3/ref/ref2.png' }),
+    createFrame({ banner_id: banner8.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/300x600/R3/ref/ref3.png' }),
+    createFrame({ banner_id: banner8.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/300x600/R3/ref/ref4.png' }),
+    createFrame({ banner_id: banner8.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/300x600/R3/ref/ref5.png' }),
+
+    // CHTR Prospecting Interactive, 160x600
+    createFrame({ banner_id: banner9.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/160x600/R2/ref/ref1.png' }),
+    createFrame({ banner_id: banner9.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/160x600/R2/ref/ref2.png' }),
+    createFrame({ banner_id: banner9.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/160x600/R2/ref/ref3.png' }),
+    createFrame({ banner_id: banner9.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/160x600/R2/ref/ref4.png' }),
+    createFrame({ banner_id: banner9.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/160x600/R2/ref/ref5.png' }),
+
+    // CHTR Prospecting Interactive, 728x90
+    createFrame({ banner_id: banner10.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/728x90/R3/ref/ref1.png' }),
+    createFrame({ banner_id: banner10.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/728x90/R3/ref/ref2.png' }),
+    createFrame({ banner_id: banner10.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/728x90/R3/ref/ref3.png' }),
+    createFrame({ banner_id: banner10.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/728x90/R3/ref/ref4.png' }),
+    createFrame({ banner_id: banner10.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/728x90/R3/ref/ref5.png' }),
+
+    // CHTR Prospecting Interactive, 300x250 Mobile
+    createFrame({ banner_id: banner11.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/300x250/R7/ref/ref1.png' }),
+    createFrame({ banner_id: banner11.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/300x250/R7/ref/ref2.png' }),
+    createFrame({ banner_id: banner11.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/300x250/R7/ref/ref3.png' }),
+    createFrame({ banner_id: banner11.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/300x250/R7/ref/ref4.png' }),
+    createFrame({ banner_id: banner11.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/300x250/R7/ref/ref5.png' }),
+
+    // CHTR Remarketing Interactive, 300x600
+    createFrame({ banner_id: banner12.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/300x600/R3/ref/ref1.png' }),
+    createFrame({ banner_id: banner12.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/300x600/R3/ref/ref2.png' }),
+    createFrame({ banner_id: banner12.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/300x600/R3/ref/ref3.png' }),
+    createFrame({ banner_id: banner12.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/300x600/R3/ref/ref4.png' }),
+    createFrame({ banner_id: banner12.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/300x600/R3/ref/ref5.png' }),
+
+    // CHTR Remarketing Interactive, 160x600
+    createFrame({ banner_id: banner13.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/160x600/R3/ref/ref1.png' }),
+    createFrame({ banner_id: banner13.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/160x600/R3/ref/ref2.png' }),
+    createFrame({ banner_id: banner13.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/160x600/R3/ref/ref3.png' }),
+    createFrame({ banner_id: banner13.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/160x600/R3/ref/ref4.png' }),
+    createFrame({ banner_id: banner13.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/160x600/R3/ref/ref5.png' }),
+
+    // CHTR Remarketing Interactive, 728x90
+    createFrame({ banner_id: banner14.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/728x90/R2/ref/ref1.png' }),
+    createFrame({ banner_id: banner14.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/728x90/R2/ref/ref2.png' }),
+    createFrame({ banner_id: banner14.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/728x90/R2/ref/ref3.png' }),
+    createFrame({ banner_id: banner14.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/728x90/R2/ref/ref4.png' }),
+    createFrame({ banner_id: banner14.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/728x90/R2/ref/ref5.png' }),
+
+    // CHTR Remarketing Interactive, 300x250 
+    createFrame({ banner_id: banner15.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Hotspot/Prospecting_300x250_V1/R1/ref/ref1.png' }),
+    createFrame({ banner_id: banner15.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Hotspot/Prospecting_300x250_V1/R1/ref/ref2.png' }),
+    createFrame({ banner_id: banner15.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Hotspot/Prospecting_300x250_V1/R1/ref/ref3.png' }),
+    createFrame({ banner_id: banner15.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Hotspot/Prospecting_300x250_V1/R1/ref/ref4.png' }),
+    createFrame({ banner_id: banner15.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Hotspot/Prospecting_300x250_V1/R1/ref/ref5.png' }),
+    createFrame({ banner_id: banner15.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Hotspot/Prospecting_300x250_V1/R1/ref/ref6.png' }),
+    
+    // CHTR Remarketing Interactive, 300x250 
+    createFrame({ banner_id: banner16.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Hotspot/Remarketing_300x250_V2/R5/ref/ref1.png' }),
+    createFrame({ banner_id: banner16.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Hotspot/Remarketing_300x250_V2/R5/ref/ref2.png' }),
+    createFrame({ banner_id: banner16.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Hotspot/Remarketing_300x250_V2/R5/ref/ref3.png' }),
+    createFrame({ banner_id: banner16.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Hotspot/Remarketing_300x250_V2/R5/ref/ref4.png' }),
+    
+    // XBox Q2 - We Got You, 300x250 
+    createFrame({ banner_id: banner17.id, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_02_XboxQ2Campaigns/WeGotYouSuperSet/300x250/cod/R6/ref/ref1.png' }),
+
+    // XBox Q2 - We Got You, 300x600 
+    createFrame({ banner_id: banner18.id, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_02_XboxQ2Campaigns/WeGotYouSuperSet/300x600/LeagueOfLegends/LoL/R3/ref/ref1.png' }),
+
+    // XBox Q2 - We Got You, 160x600 
+    createFrame({ banner_id: banner19.id, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_02_XboxQ2Campaigns/WeGotYouSuperSet/160x600/Sims4/R2/ref/ref1.png' }),
+
+    // XBox Q2 - We Got You, 728x90 
+    createFrame({ banner_id: banner20.id, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_02_XboxQ2Campaigns/WeGotYouSuperSet/728x90/stalker2/R5/ref/ref1.png' }),
+
+    // XBox Q2 - We Got You, 970x250 
+    createFrame({ banner_id: banner21.id, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_02_XboxQ2Campaigns/WeGotYouSuperSet/970x250/indianajones/R4/ref/ref1.png' }),
+
+    // XBox Q2 - We Got You, 320x50 - NONE
+     ])
+/*
+    CREATE TABLE frames(
       id UUID PRIMARY KEY,
-      storyboard_id UUID REFERENCES storyboards(id),
+      banner_id UUID REFERENCES banners(id),
       link TEXT NOT NULL
+      CONSTRAINT banner_and_frame UNIQUE(banner_id, id)
     );
 */
   

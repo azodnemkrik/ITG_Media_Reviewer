@@ -75,17 +75,17 @@ const fetchSingleBanner = async (bannerId) => {
     return response.rows[0]
 }
 
-const fetchStoryboard = async (bannerId) => {
-    console.log('fetchStoryboard called with ID:', bannerId)
-    const SQL = `
-        SELECT *
-        FROM storyboards
-        WHERE banner_id = $1
-    `
-    const response = await client.query(SQL, [bannerId])
-    console.log('Storyboard:', response.rows[0])
-    return response.rows[0]
-}
+// const fetchStoryboard = async (bannerId) => {
+//     console.log('fetchStoryboard called with ID:', bannerId)
+//     const SQL = `
+//         SELECT *
+//         FROM storyboards
+//         WHERE banner_id = $1
+//     `
+//     const response = await client.query(SQL, [bannerId])
+//     console.log('Storyboard:', response.rows[0])
+//     return response.rows[0]
+// }
 
 // const fetchFrames = async (storyboardId) => {
 //     console.log('fetchFrames called with ID:', storyboardId)
@@ -111,7 +111,7 @@ module.exports = {
     createBanner,
     fetchBanners,
     fetchSingleBanner,
-    fetchStoryboard
+    // fetchStoryboard
     // fetchFrames,
     // createStoryboard,
     // createFrame
