@@ -47,7 +47,7 @@ function App() {
 	useEffect(() => {
 		const fetchFrames = async () => {
 			try {
-				const { data } = await axios.get('/api/banners/frames')
+				const { data } = await axios.get('/api/frames')
 				console.log('FRAMES:', data)
 				setAllFrames(data)
 			} catch (error) {

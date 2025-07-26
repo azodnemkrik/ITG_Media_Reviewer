@@ -4,7 +4,7 @@ const { createUser } = require('./users');
 const { createBanner } = require('./banners');
 const { createProject } = require('./projects');
 const { createCreative } = require('./creatives');
-const { createFrame , fetchFrames } = require('./frames');
+const { createFrame , fetchFrames , fetchSingleBannerFrames } = require('./frames');
 const path = require('path')
 const fs = require('fs')
 
@@ -213,15 +213,7 @@ const seed = async () => {
     createBanner({ creative_id: creative11.id, creative_name: creative11.creative_name, org_code:prj4.org_code, job_number: prj4.job_number , width: 970, height: 250, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_02_XboxQ2Campaigns/Alabama/970x250/R5/index.html' }),
 
   ])
-
-  // CREATE STARTER STORYBOARDS
-  // const [storyboard1, storyboard2, storyboard3, storyboard4, storyboard5] = await Promise.all([
-  //   createStoryboard({ banner_id: banner1.id }), 
-  //   createStoryboard({ banner_id: banner2.id }),
-  //   createStoryboard({ banner_id: banner3.id }),
-  //   createStoryboard({ banner_id: banner4.id }),
-  //   createStoryboard({ banner_id: banner5.id })
-  // ])
+  
 
   // CREATE STARTER FRAMES
   const [frame1, frame2, frame3, frame4, frame5, frame6, frame7, frame8, frame9, frame10,
@@ -339,15 +331,7 @@ const seed = async () => {
 
     // XBox Q2 - We Got You, 320x50 - NONE
      ])
-/*
-    CREATE TABLE frames(
-      id UUID PRIMARY KEY,
-      banner_id UUID REFERENCES banners(id),
-      link TEXT NOT NULL
-      CONSTRAINT banner_and_frame UNIQUE(banner_id, id)
-    );
-*/
-  
+     
   console.log('SUCCESS – Seeded data')
 
 }
