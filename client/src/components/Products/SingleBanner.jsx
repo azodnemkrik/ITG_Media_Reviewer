@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams , Link } from "react-router-dom";
 import { use, useEffect, useRef, useState } from 'react';
 import React from 'react';
 
@@ -127,6 +127,15 @@ const SingleBanner = ({ allBanners, allStoryboards, allFrames }) => {
 		currentFrame.classList.remove('hidden');
 	}
 
+	const resetFrames = () => {
+		const buttonElements = document.querySelectorAll('.paginationBorder');
+		buttonElements.forEach((button) => {
+			button.classList.remove('selectedButton');
+		});
+		const currentFrame = document.querySelector(".frame1");
+		currentFrame.classList.remove('hidden');
+	}
+
 
 
 	// let onionSkinMode = true;
@@ -141,13 +150,17 @@ const SingleBanner = ({ allBanners, allStoryboards, allFrames }) => {
 			iframe_and_frames_container.style.width = `${banner.width}px`;
 			console.log("adding float class");
 			framesContainer.classList.add('float');
+			framesContainer.style.marginLeft = '0px';
 			frameOpacity = .5;
 			frameElements.forEach((frame) => {
 				frame.style.opacity = frameOpacity;
 			});
 		} else {
 			// Switching to onion skin mode  
-			iframe_and_frames_container.style.width = `${banner.width * 2 + 50}px`;
+			if(!showFrames){
+				iframe_and_frames_container.style.width = `${banner.width * 2 + 50}px`;
+			}
+			framesContainer.style.marginLeft = '23px';
 			console.log("removing float class");
 			framesContainer.classList.remove('float');
 			frameOpacity = 1;
@@ -193,9 +206,9 @@ const SingleBanner = ({ allBanners, allStoryboards, allFrames }) => {
 				button.classList.remove('hidden');
 			});
 			if (onionSkinMode) {
-				// console.log("About to call handleToggleFrameOrSkins() from line 207");
 				handleToggleFrameOrSkins();
 			}
+			resetFrames();
 
 		} else {
 			// Switching to SHOW FRAMES mode
@@ -259,19 +272,19 @@ const SingleBanner = ({ allBanners, allStoryboards, allFrames }) => {
 									{
 										filteredFrameElements.map((frame) => (
 											// <a href="#" onClick={updateFrame} title={`Frame ${filteredFrameElements.indexOf(frame) + 1}`}>
-												<div className="paginationBorder" onClick={updateFrame}>
-													<p className="paginationNumber">{filteredFrameElements.indexOf(frame) + 1}</p>
-												</div>
+											<div className="paginationBorder" onClick={updateFrame}>
+												<p className="paginationNumber">{filteredFrameElements.indexOf(frame) + 1}</p>
+											</div>
 											// </a>
 										))
 									}
 								</div>
 							</div>
-
 						</div>
 					</>
 				)
 			}
+			<Link to="/projects" className="backToProjectsLink"><span className="material-symbols-outlined">arrow_back</span>Back to Projects</Link>
 		</div>
 	)
 }

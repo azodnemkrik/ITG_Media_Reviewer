@@ -207,6 +207,21 @@ a {
 	flex-direction: column !important;
 }
 
+.backToProjectsLink{
+	display: flex;
+	/* width: 200px; */
+	gap: 10px;
+	/* justify-content: center; */
+	/* align-items: center; */
+	/* flex-direction: column; */
+	/* line-height: 100px; */
+	/* left: -30px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px; */
+	margin-top: 70px;
+}
+
 .onionSkin {
 	/* display: inline-block; */
 	/* display: block; */
