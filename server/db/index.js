@@ -99,6 +99,7 @@ const seed = async () => {
   const logoCharter = await loadImage('images/charter.png')
   const logoMicrosoft = await loadImage('images/microsoft-logo.png')
   const logoXbox = await loadImage('images/xbox-logo.png')
+  const logoOther = await loadImage('images/none-icon.png')
 
   // CREATE STARTER ORGANIZATIONS
   const [itg, charter, microsoft, xbox, other] = await Promise.all([
@@ -106,7 +107,7 @@ const seed = async () => {
     createOrganization({ name: 'Charter', org_code: 'CHTR', logo: logoCharter }),
     createOrganization({ name: 'Microsoft', org_code: 'MSTH', logo: logoMicrosoft }),
     createOrganization({ name: 'Microsoft', org_code: 'MSTX', logo: logoXbox }),
-    createOrganization({ name: 'Other', org_code: 'OTHER', logo: null })
+    createOrganization({ name: 'Other', org_code: 'OTHER', logo: logoOther })
   ])
 
   // CREATE STARTER USERS
@@ -160,7 +161,7 @@ const seed = async () => {
     createBanner({ creative_id: creative1.id, creative_name: creative1.creative_name, org_code:prj1.org_code, job_number: prj1.job_number , width: 970, height: 250, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/970x250/R4/index.html' }),
 
     // Interactive Demo Pitch
-    createBanner({ creative_id: creative2.id, creative_name: creative2.creative_name, org_code:prj2.org_code, job_number: prj2.job_number , width: 300, height: 600, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/23_FLOOR_012907_Interactive_Demo_Pitch/300x600/R4/Interactive_Demo_Pitch.html' }),
+    createBanner({ creative_id: creative2.id, creative_name: creative2.creative_name, org_code:prj2.org_code, job_number: prj2.job_number , width: 300, height: 600, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/flooranddecor/23_FLOOR_012907_Interactive_Demo_Pitch/300x600/R4/Interactive_Demo_Pitch.html' }),
 
     // CHTR Prospecting Interactive
     createBanner({ creative_id: creative3.id, creative_name: creative3.creative_name, org_code:prj3.org_code, job_number: prj3.job_number , width: 300, height: 250, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/300x250/R6/index.html' }),

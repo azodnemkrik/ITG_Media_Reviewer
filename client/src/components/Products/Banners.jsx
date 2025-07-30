@@ -3,16 +3,16 @@ import { Link } from "react-router-dom"
 const Banners = ({ allBanners }) => {
 
     return (
-        <div>
+        <div className="allBannersContainer">
             {
                 allBanners.map((banner) => {
                     return (
-                        <div>
+                        <div className="bannerCard" key={banner.id}>
                             <h3>ID:{banner.id}</h3>
                             <p>{banner.creative_name} ({banner.creative_id})</p>
                             <p>Dimensions: {banner.width} x {banner.height}</p>
                             <iframe src={banner.link} width={banner.width} height={banner.height} title='banner' name={banner.id}></iframe><br />
-                            <input type="range" className="slider" name="maintl" min="0" max="1" defaultValue="0" step="0.01" /><br />
+                            {/* <input type="range" className="slider" name="maintl" min="0" max="1" defaultValue="0" step="0.01" /><br /> */}
                             <a href={banner.link} target={banner.id}>Reload Banner</a>
                             <hr />
                         </div>
