@@ -33,7 +33,7 @@ function App() {
 		const fetchBanners = async () => {
 			try {
 				const { data } = await axios.get('/api/banners')
-				console.log("BANNERS:", data)
+				// console.log("BANNERS:", data)
 				setAllBanners(data)
 			} catch (error) {
 				console.error(error)
@@ -47,8 +47,8 @@ function App() {
 	useEffect(() => {
 		const fetchFrames = async () => {
 			try {
-				const { data } = await axios.get('/api/banners/frames')
-				console.log('FRAMES:', data)
+				const { data } = await axios.get('/api/frames')
+				// console.log('FRAMES:', data)
 				setAllFrames(data)
 			} catch (error) {
 				console.error(error)
@@ -62,7 +62,7 @@ function App() {
 		const fetchStoryboards = async () => {
 			try {
 				const { data } = await axios.get('/api/banners/storyboards')
-				console.log('STORYBOARDS:', data)
+				// console.log('STORYBOARDS:', data)
 				setAllStoryboards(data)
 			} catch (error) {
 				console.error(error)
@@ -76,7 +76,7 @@ function App() {
 		const fetchProjects = async () => {
 			try {
 				const { data } = await axios.get('/api/projects')
-				console.log('PROJECTS:', data)
+				// console.log('PROJECTS:', data)
 				setAllProjects(data)
 			} catch (error) {
 				console.error(error)
@@ -89,7 +89,7 @@ function App() {
 		const fetchOrganizations = async () => {
 			try {
 				const { data } = await axios.get('/api/organizations')
-				console.log('ORGANIZATIONS:', data)
+				// console.log('ORGANIZATIONS:', data)
 				setAllOrganizations(data)
 			} catch (error) {
 				console.error(error)
@@ -151,15 +151,16 @@ function App() {
 	return (
 		<div className='stage' style={{
 			backgroundImage: "url(" + pinkWaves + ")",
-			backgroundPosition: 'center',
+			backgroundPosition: 'center center',
 			backgroundSize: 'cover',
-			backgroundRepeat: 'no-repeat'
+			backgroundRepeat: 'no-repeat',
+			backgroundAttachment: 'fixed',
 		}}>
 			<Navigation user={user} pathname={pathname} logout={logout} />
 
 			<Routes>
 				<Route path="/" element={<Home user={user} attemptLoginWithToken={attemptLoginWithToken} />} />
-				<Route path="/projects" element={<Projects allProjects={allProjects} allBanners={allBanners} allCreatives={allCreatives} user={user} />} />
+				<Route path="/projects" element={<Projects allProjects={allProjects} allBanners={allBanners} allCreatives={allCreatives} allOrganizations={allOrganizations} user={user} />} />
 				<Route path="/banners" element={<Banners allBanners={allBanners} allFrames={allFrames} />} />
 				<Route path="/banners/:id" element={<SingleBanner allBanners={allBanners} allStoryboards={allStoryboards} allFrames={allFrames} />} />
 				<Route path="/register" element={<Register />} />

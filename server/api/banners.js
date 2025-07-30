@@ -30,23 +30,13 @@ app.get('/:id', async (req, res, next) => {
     }
 })
 
-// app.get('/storyboard/:id', async (req, res, next) => {
+
+// app.get('/storyboard/:storyboardId', async (req, res, next) => {
 //     try {
-//         res.send(await fetchStoryboard(req.params.id))
+//         res.send(await fetchFrames(req.params.storyboardId))
 //     } catch (error) {
 //         next(error)
 //     }
-
 // })
-
-
-
-app.get('/storyboard/:storyboardId', async (req, res, next) => {
-    try {
-        res.send(await fetchFrames(req.params.storyboardId))
-    } catch (error) {
-        next(error)
-    }
-})
 
 module.exports = app

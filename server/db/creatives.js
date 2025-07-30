@@ -12,14 +12,14 @@ const createCreative = async (creative) => {
     // GENERATE SQL TO PASS
     const SQL = `
         INSERT INTO creatives
-        (id, creative_name, job_number)
+        (id, creative_name, org_code, job_number)
         VALUES
-        ($1, $2, $3)
+        ($1, $2, $3, $4)
         RETURNING * 
     `
     
     // GENERATE RESPONSE
-    const response = await client.query(SQL , [uuidv4(), creative.creative_name, creative.job_number])
+    const response = await client.query(SQL , [uuidv4(), creative.creative_name, creative.org_code, creative.job_number])
     return response.rows[0]
 
 }
