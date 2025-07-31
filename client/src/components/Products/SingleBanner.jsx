@@ -254,7 +254,7 @@ const SingleBanner = ({ allBanners, allStoryboards, allFrames }) => {
 				!banner ? (<h2>Loading...</h2>) : (
 					<>
 						<p>Project: <span className="projectStyle">{banner.org_code}-{banner.job_number}</span></p>
-						<p>Creative: <span className="projectStyle">{banner.creative_name} {banner.width} x {banner.height}</span></p>
+						<p>Creative: <span className="projectStyle">{banner.creative_name}-{banner.width}x{banner.height}</span></p>
 						<div className="iframe_and_frames_container" style={{ width: banner.width, height: banner.height }}>
 							<div className="banner_and_replay_container" style={{ width: banner.width, height: banner.height }}>
 								<a className="float replayButton" href={banner.link} target={banner.id}><span className="material-symbols-outlined">
