@@ -185,7 +185,7 @@ function App() {
 			<Routes>
 				<Route path="/" element={<Home user={user} attemptLoginWithToken={attemptLoginWithToken} />} />
 				<Route path="/projects" element={<Projects allProjects={allProjects?.sort((a, b) => a.org_code.localeCompare(b.org_code)) || []} allBanners={allBanners} allCreatives={allCreatives} allOrganizations={allOrganizations} user={user} />} />
-				<Route path="/banners" element={<Banners allBanners={allBanners} allFrames={allFrames} allUsers={allUsers} user={user} />} />
+				<Route path="/banners" element={<Banners allBanners={allBanners} allFrames={allFrames} allUsers={allUsers} user={user} allOrganizations={allOrganizations} />} />
 				<Route path="/banners/:id" element={<SingleBanner allBanners={allBanners} allStoryboards={allStoryboards} allFrames={allFrames} user={user} />} />
 				<Route path="/register" element={<Register />} />
 				<Route path="/organizations" element={<Organizations allOrganizations={allOrganizations} allUsers={allUsers?.sort((a, b) => a.last_name.localeCompare(b.last_name)) || []} user={user} fetchAllUsers={fetchAllUsers}/>} />

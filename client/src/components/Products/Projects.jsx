@@ -40,7 +40,7 @@ const Projects = ({ allProjects, allBanners, allCreatives, allOrganizations, use
 																		.filter(banner => banner.creative_name === creative.creative_name)
 																		.map(banner => (
 																			<li key={banner.id}>
-																				<Link to={`/banners/${banner.id}`}>
+																				<Link to={`/banners/${banner.id}`} state={{ from: 'projects' }}>
 																					Banner: {banner.width} x {banner.height}
 																				</Link>
 																			</li>
@@ -79,7 +79,7 @@ const Projects = ({ allProjects, allBanners, allCreatives, allOrganizations, use
 																		.filter(banner => banner.creative_name === creative.creative_name)
 																		.map(banner => (
 																			<li key={banner.id}>
-																				<Link to={`/banners/${banner.id}`}>
+																				<Link to={`/banners/${banner.id}`} state={{ from: 'projects' }}>
 																					Banner: {banner.width} x {banner.height}
 																				</Link>
 																			</li>

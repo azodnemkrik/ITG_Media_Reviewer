@@ -1,4 +1,4 @@
-import { useParams , Link } from "react-router-dom";
+import { useParams, Link, useLocation } from "react-router-dom";
 import { use, useEffect, useRef, useState } from 'react';
 import React from 'react';
 
@@ -7,6 +7,7 @@ const SingleBanner = ({ allBanners, allStoryboards, allFrames }) => {
 	const id = params.id
 	const [showFrames, setShowFrames] = useState(true);
 	const [onionSkinMode, setOnionSkinMode] = useState(false);
+	const location = useLocation();
 
 	// console.log("PARAM:", params.id)
 
@@ -161,7 +162,7 @@ const SingleBanner = ({ allBanners, allStoryboards, allFrames }) => {
 				iframe_and_frames_container.style.height = `${banner.height * 2 + 50}px`;
 			} else {
 				iframe_and_frames_container.style.width = `${banner.width * 2 + 50}px`;
-			}			
+			}
 
 
 
@@ -289,7 +290,18 @@ const SingleBanner = ({ allBanners, allStoryboards, allFrames }) => {
 					</>
 				)
 			}
-			<Link to="/projects" className="backToProjectsLink"><span className="material-symbols-outlined">arrow_back</span>Back to Projects</Link>
+			{location.state?.from === 'banners' ? (
+				<Link to="/banners" className="backTo">
+					<span className="material-symbols-outlined">arrow_back</span>
+					Back to Banners
+				</Link>
+			) : (
+				<Link to="/projects" className="backTo">
+					<span className="material-symbols-outlined">arrow_back</span>
+					Back to Projects
+				</Link>
+			)}
+			{/* <Link to="/projects" className="backToProjectsLink"><span className="material-symbols-outlined">arrow_back</span>Back to Projects</Link> */}
 		</div>
 	)
 }
