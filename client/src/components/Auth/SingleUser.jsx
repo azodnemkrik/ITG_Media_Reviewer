@@ -36,8 +36,10 @@ const SingleUser = ({ allUsers , setAllUsers , user}) => {
 			try {
 			const { data } = await axios.put(`/api/users/${editUser.id}`, userData)
 			console.log(data)
-			// Update the user state immediately with the returned data
-			setAllUsers([...allUsers, data])
+			// Update the user in the array by replacing the existing one
+			setAllUsers(allUsers.map(aUser => 
+				aUser.id === editUser.id ? data : aUser
+			))
 			alert('Update successful! Thank you')
 			navigate(`/users/${editUser.id}`)
 		} catch (error) {
@@ -55,9 +57,9 @@ const SingleUser = ({ allUsers , setAllUsers , user}) => {
 					<form onSubmit={updateForm}>
 						<div className="itgForm">
 							<div className="formTop">
-								<div className="logoAndName">
-									<img className="userAvatarAccount" src={`data:image/png;base64, ${editUser.avatar}`} alt="User Avatar" />
-									<h1>Update Account</h1>
+								<div className="logoAndUpdateAccount">
+									<img className="userAvatarAccount formAvatar" src={`data:image/png;base64, ${editUser.avatar}`} alt="User Avatar" />
+									<h1>{editUser.first_name} {editUser.last_name}</h1>
 								</div>
 							</div>
 							<div className="formBottom">

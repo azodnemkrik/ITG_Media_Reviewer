@@ -634,6 +634,26 @@ form button:hover {
 	padding-top: 1.5rem;
 }
 
+.logoAndUpdateAccount {
+	/* width: 60%; */
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	align-items: center;
+	gap: 0px;
+}
+
+.formAvatar {
+	margin-top: 20px;
+	width: 140px;
+}
+
+.logoAndUpdateAccount h1 {
+	font-size: 3rem;
+	line-height: 3rem;
+	
+}
+
 /* ORGANIZATIONS */
 .allOrganizationsContainer {
 	display: flex;

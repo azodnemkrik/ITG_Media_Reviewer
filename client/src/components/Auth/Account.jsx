@@ -50,7 +50,7 @@ const Account = ({ user, setUser }) => {
 					<form onSubmit={updateForm}>
 						<div className="itgForm">
 							<div className="formTop">
-								<div className="logoAndName">
+								<div className="logoAndUpdateAccount">
 									<img className="userAvatarAccount" src={`data:image/png;base64, ${user.avatar}`} alt="User Avatar" />
 									<h1>Update Account</h1>
 								</div>
