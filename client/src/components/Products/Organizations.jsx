@@ -1,8 +1,12 @@
 import { all } from "axios"
+import { useEffect } from "react"
 import { Link } from "react-router-dom"
 
-const Organizations = ({ allOrganizations, allUsers, user }) => {
+const Organizations = ({ allOrganizations, allUsers, user , fetchAllUsers }) => {
 
+	useEffect(() => {
+		fetchAllUsers();
+	}, []); 
 
 	const getUsersByOrgCode = (org_code) => {
 		// Check if allUsers is an array before filtering
@@ -29,13 +33,15 @@ const Organizations = ({ allOrganizations, allUsers, user }) => {
 						const users = getUsersByOrgCode(organization.org_code);
 						return (
 							<div className="organizationContainer" key={organization.id}>
-								<div className="orgLogoInOrganization">
+								<div className="orgLogoContainerInOrganization">
 									<img className="orgLogo" src={organization.logo} alt={organization.name} />
 									<h4>{organization.name} ({organization.org_code})</h4>
 								</div><br />
 								{users.map((user) => (
 									<div key={user.id} className="userContainer">
-										<img className="userAvatar" src={`data:image/png;base64, ${user.avatar}`} alt="User Avatar" />
+										<Link to={`/users/${user.id}`}>
+											<img className="userAvatar" src={`data:image/png;base64, ${user.avatar}`} alt="User Avatar" />
+										</Link>
 										<p>{user.first_name} {user.last_name}
 											{user.is_admin ? (
 												<>
@@ -61,7 +67,7 @@ const Organizations = ({ allOrganizations, allUsers, user }) => {
 								const users = getUsersByOrgCode(organization.org_code);
 								return (
 									<div className="organizationContainer" key={organization.id}>
-										<div className="orgLogoContainer">
+										<div className="orgLogoContainerInOrganization">
 											<img className="orgLogo" src={organization.logo} alt={organization.name} />
 											<h4>{organization.name} ({organization.org_code})</h4>
 										</div><br />

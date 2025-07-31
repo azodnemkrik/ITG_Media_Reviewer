@@ -135,12 +135,25 @@ nav {
 	-webkit-transition: .15s ease-in-out;
 }
 
+.userAvatarAccount{
+	/* top: 20px; */
+	width: 100px;
+	/* right: 0; */
+	/* height: 50%; */
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border: 2px solid #FFFFFF;
+	/* transition: .15s ease-in-out;
+	-webkit-transition: .15s ease-in-out; */
+}
+
 a {
 	color: #1c3454;
 	text-decoration: none;
 	transition: .15s ease-in-out;
 	-webkit-transition: .15s ease-in-out;
 }
+
 a:hover {
 	color: #DB1C97;
 	text-decoration: none;
@@ -152,8 +165,14 @@ a:hover {
 	transition: .15s ease-in-out;
 	-webkit-transition: .15s ease-in-out;
 }
+
 .navStyle:hover {
 	color: #FFFFFF;
+}
+
+.selected {
+	color: #FFFFFF;
+	/* text-decoration: underline #1c3454; */
 }
 
 .float {
@@ -183,12 +202,34 @@ a:hover {
 
 /* All Banners */
 .allBannersContainer {
+	display: flex;
+	flex-wrap: wrap;
+	/* display: grid; */
+	/* grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); */
 	/* display: flex; */
 	/* flex-wrap: wrap; */
 	/* justify-content: center; */
-	/* align-items: center; */
+	/* align-items: flex-start; */
 	/* gap: 20px; */
-	padding: 100px 0;
+	/* padding: 100px 0; */
+}
+
+.bannerCard {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	/* scale: .5; */
+	gap: 10px;
+	/* width: 400px; */
+	/* height: 300px; */
+	border-radius: 10px;
+	margin: 10px;
+	padding: 100px 50px 50px 50px;
+	font-style: normal;
+	background-color: #FFFFFF;
+	box-shadow: 0px 5px 5px 3px rgba(0, 0, 0, .3);
+
 }
 
 
@@ -228,7 +269,7 @@ a:hover {
 	flex-direction: column !important;
 }
 
-.backToProjectsLink{
+.backTo {
 	display: flex;
 	/* width: 200px; */
 	gap: 10px;
@@ -533,6 +574,7 @@ a:hover {
 }
 
 .one-column-layout {
+	width: 430px;
 	display: grid;
 	grid-template-columns: 1fr;
 }
@@ -592,7 +634,7 @@ form button:hover {
 }
 
 /* ORGANIZATIONS */
-.allOrganizationsContainer{
+.allOrganizationsContainer {
 	display: flex;
 	flex-wrap: nowrap;
 	justify-content: center;
@@ -630,7 +672,7 @@ form button:hover {
 	box-shadow: 0px 5px 5px 3px rgba(0, 0, 0, .3);
 }
 
-.orgLogoInOrganization {
+.orgLogoContainerInOrganization {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -646,6 +688,7 @@ form button:hover {
 	gap: 50px;
 	width: 600px;
 }
+
 .orgLogo {
 	height: 60px;
 }
@@ -660,7 +703,72 @@ form button:hover {
 	gap: 20px;
 }
 
-ol, li {
+/* ACCOUNT */
+.accountContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100vh;
+	padding-top: 100px;
+	gap: 20px;
+}
+.memberStatusContainer {
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	gap: 10px;
+}
+
+/* Hide the default checkbox */
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none; /* For Safari compatibility */
+  /* Add other styling for the custom checkbox container */
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Style the custom checkmark using ::before */
+input[type="checkbox"]::before {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  margin: 2px;
+  background-color: transparent;
+  border-radius: 2px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Style the checkmark when checked */
+input[type="checkbox"]:checked::before {
+  background-color: #DB1C97; /* Blue checkmark */
+}
+
+/* Add a visual indicator for the checked state (e.g., a checkmark icon) */
+input[type="checkbox"]:checked::after {
+  content: "\2713"; /* Unicode checkmark character */
+  font-size: 14px;
+  color: #ffffff;
+  position: absolute;
+  /* top: 50%; */
+  /* left: 50%; */
+  transform: translate(20%, -95%);
+}
+
+
+.checkBox {
+	width: 20px;
+	height: 20px;
+}	
+ol,
+li {
 	padding: 0;
 	margin: 0;
 }

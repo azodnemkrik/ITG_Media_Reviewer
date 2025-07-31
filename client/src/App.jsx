@@ -11,6 +11,8 @@ import pinkWaves from './assets/pink-waves-background.png'
 import Login from './components/Auth/Login';
 import Projects from './components/Products/Projects';
 import Organizations from './components/Products/Organizations';
+import Account from './components/Auth/Account';
+import SingleUser from './components/Auth/SingleUser';
 
 
 function App() {
@@ -105,17 +107,18 @@ function App() {
 		fetchOrganizations()
 	}, [])
 
+	const fetchAllUsers = async () => {
+		try {
+			const { data } = await axios.get('/api/users')
+			console.log('USERS:', data)
+			setAllUsers(data)
+		} catch (error) {
+			console.error(error)
+		}
+	}
+
 	// Fetch All Users
 	useEffect(() => {
-		const fetchAllUsers = async () => {
-			try {
-				const { data } = await axios.get('/api/users')
-				console.log('USERS:', data)
-				setAllUsers(data)
-			} catch (error) {
-				console.error(error)
-			}
-		}
 		fetchAllUsers()
 	}, [])
 
@@ -181,13 +184,14 @@ function App() {
 
 			<Routes>
 				<Route path="/" element={<Home user={user} attemptLoginWithToken={attemptLoginWithToken} />} />
-				<Route path="/projects" element={<Projects allProjects={allProjects.sort((a, b) => a.org_code.localeCompare(b.org_code))} allBanners={allBanners} allCreatives={allCreatives} allOrganizations={allOrganizations} user={user} />} />
-				<Route path="/banners" element={<Banners allBanners={allBanners} allFrames={allFrames} user={user} />} />
+				<Route path="/projects" element={<Projects allProjects={allProjects?.sort((a, b) => a.org_code.localeCompare(b.org_code)) || []} allBanners={allBanners} allCreatives={allCreatives} allOrganizations={allOrganizations} user={user} />} />
+				<Route path="/banners" element={<Banners allBanners={allBanners} allFrames={allFrames} allUsers={allUsers} user={user} />} />
 				<Route path="/banners/:id" element={<SingleBanner allBanners={allBanners} allStoryboards={allStoryboards} allFrames={allFrames} user={user} />} />
 				<Route path="/register" element={<Register />} />
-				<Route path="/organizations" element={<Organizations allOrganizations={allOrganizations} allUsers={allUsers.sort((a, b) => a.last_name.localeCompare(b.last_name))} user={user} />} />
+				<Route path="/organizations" element={<Organizations allOrganizations={allOrganizations} allUsers={allUsers?.sort((a, b) => a.last_name.localeCompare(b.last_name)) || []} user={user} fetchAllUsers={fetchAllUsers}/>} />
 				<Route path="/login" element={<Login attemptLoginWithToken={attemptLoginWithToken} />} />
-
+				<Route path={"/users/me"} element={<Account user={user} setUser={setUser} />} />
+				<Route path={"/users/:id"} element={<SingleUser allUsers={allUsers} setAllUsers={setAllUsers} user={user}/>} />
 			</Routes>
 			<Footer pathname={pathname} />
 		</div>

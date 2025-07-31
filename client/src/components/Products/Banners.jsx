@@ -1,19 +1,20 @@
 import { Link } from "react-router-dom"
 
-const Banners = ({ allBanners }) => {
+const Banners = ({ allBanners , allUsers , user }) => {
 
     return (
         <div className="allBannersContainer">
             {
-                allBanners.map((banner) => {
+                allBanners.filter(banner => banner.org_code === user.org_code || user.org_code === "ITG")
+                .map((banner) => {
                     return (
                         <div className="bannerCard" key={banner.id}>
-                            <h3>ID:{banner.id}</h3>
-                            <p>{banner.creative_name} ({banner.creative_id})</p>
-                            <p>Dimensions: {banner.width} x {banner.height}</p>
-                            <iframe src={banner.link} width={banner.width} height={banner.height} title='banner' name={banner.id}></iframe><br />
-                            {/* <input type="range" className="slider" name="maintl" min="0" max="1" defaultValue="0" step="0.01" /><br /> */}
-                            <a href={banner.link} target={banner.id}>Reload Banner</a>
+                            <p>
+                            {banner.creative_name}<br />
+                            {banner.org_code}-{banner.job_number}<br />
+                            {banner.width} x {banner.height}<br />
+                            <iframe className='hidden' src={banner.link} width={banner.width} height={banner.height} title='banner' name={banner.id}></iframe><br />
+                            <a href={banner.link} target={banner.id}>Reload Banner</a></p>
                             <hr />
                         </div>
                         // <div key={banner.id}>

@@ -18,7 +18,7 @@ const Navigation = ({ user, pathname, logout }) => {
                                         <p><Link to="/projects" className={pathname === "/projects" ? "navStyle selected" : "navStyle"}>Projects</Link></p>
                                         <p><Link to="/banners" className={pathname === "/banners" ? "navStyle selected" : "navStyle"}>Banners</Link></p>
                                         <p><Link to="/organizations" className={pathname === "/organizations" ? "navStyle selected" : "navStyle"}>Organizations</Link></p>
-                                        <p><Link to="/auth/me" className={pathname === "/account" ? "navStyle selected" : "navStyle"}>Account</Link></p>
+                                        <p><Link to={"/users/me"} className={pathname === "/users/me" ? "navStyle selected" : "navStyle"}>Account</Link></p>
                                         <div className="userAvatarContainer">
                                             <button className="float logoutButton" onClick={logout}>Logout</button>
                                             <img className="float userAvatar" src={`data:image/png;base64, ${user.avatar}`} alt="User Avatar" />
@@ -32,7 +32,7 @@ const Navigation = ({ user, pathname, logout }) => {
                                             <p><Link to="/projects" className={pathname === "/projects" ? "navStyle selected" : "navStyle"}>Projects</Link></p>
                                             <p><Link to="/banners" className={pathname === "/banners" ? "navStyle selected" : "navStyle"}>Banners</Link></p>
                                             <p><Link to="/organizations" className={pathname === "/organizations" ? "navStyle selected" : "navStyle"}>Organizations</Link></p>
-                                            <p><Link to="/auth/me" className={pathname === "/account" ? "navStyle selected" : "navStyle"}>Account</Link></p>
+                                            <p><Link to={"/users/me"} className={pathname === "/users/me" ? "navStyle selected" : "navStyle"}>Account</Link></p>
                                             <div className="userAvatarContainer">
                                                 <button className="float logoutButton" onClick={logout}>Logout</button>
                                                 <img className="float userAvatar" src={`data:image/png;base64, ${user.avatar}`} alt="User Avatar" />
@@ -43,7 +43,7 @@ const Navigation = ({ user, pathname, logout }) => {
                                         <>
                                             <p><Link to="/projects" className={pathname === "/projects" ? "navStyle selected" : "navStyle"}>Projects</Link></p>
                                             <p><Link to="/banners" className={pathname === "/banners" ? "navStyle selected" : "navStyle"}>Banners</Link></p>
-                                            <p><Link to="/auth/me" className={pathname === "/account" ? "navStyle selected" : "navStyle"}>Account</Link></p>
+                                            <p><Link to={"/users/me"} className={pathname === "/users/me" ? "navStyle selected" : "navStyle"}>Account</Link></p>
                                             <div className="userAvatarContainer">
                                                 <button className="float logoutButton" onClick={logout}>Logout</button>
                                                 <img className="float userAvatar" src={`data:image/png;base64, ${user.avatar}`} alt="User Avatar" />

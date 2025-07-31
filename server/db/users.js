@@ -66,8 +66,39 @@ const fetchAllUsers = async () => {
     return response.rows
 }
 
+// READ by ID
+const fetchUserById = async (id) => {
+    const SQL = `
+        SELECT *
+        FROM users
+        WHERE id = $1
+    `
+    const response = await client.query(SQL, [id])
+    return response.rows[0]
+}
+
+const updateUser = async (id, userData) => {
+    const SQL = `
+        UPDATE users
+        SET first_name = $1, last_name = $2, email = $3, org_code = $4, is_admin = $5, avatar = $6
+        WHERE id = $7
+        RETURNING *
+    `
+    const response = await client.query(SQL, [
+        userData.first_name,
+        userData.last_name,
+        userData.email,
+        userData.org_code,
+        userData.is_admin,
+        userData.avatar,
+        id
+    ])
+    return response.rows[0]
+}
 
 module.exports = {
     createUser,
-    fetchAllUsers
+    fetchAllUsers,
+    fetchUserById,
+    updateUser
 }

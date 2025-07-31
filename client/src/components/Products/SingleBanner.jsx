@@ -157,9 +157,6 @@ const SingleBanner = ({ allBanners, allStoryboards, allFrames }) => {
 			});
 		} else {
 			// Switching to onion skin mode  
-			// if(!showFrames){
-			// 	iframe_and_frames_container.style.width = `${banner.width * 2 + 50}px`;
-			//}
 			if (banner.width > 2 * banner.height) {
 				iframe_and_frames_container.style.height = `${banner.height * 2 + 50}px`;
 			} else {
