@@ -1,24 +1,16 @@
-import { Link , useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import Login from "../Auth/Login"
 
-const Home = ({ user ,  attemptLoginWithToken }) => {
-
-    const navigate = useNavigate();
+const Home = ({ user, attemptLoginWithToken }) => {
 
     return (
-        <div className="homeContainer">
-            <h3>Home</h3>
-            {
-                user.id ? (
-                    navigate('/projects')
-                ) : (
-                    navigate('/login')
-                    // <Login attemptLoginWithToken={attemptLoginWithToken} />
-                    // <h3>Log in! </h3>
-                    // <h4> See one you're interested in?<br/>
-                    // <Link to="/login" className="registerNowLink">Log in</Link> to reserve books!<br/>Not a member? <Link to="/register" className="registerNowLink">Register now</Link>!</h4>
-                )
-            }
+        <div>
+            <h3>Welcome to ITG Media Reviewer</h3>
+            {user.id ? (
+                <p>Hello, {user.first_name}!</p>
+            ) : (
+                <p>Please log in to continue</p>
+            )}
         </div>
     )
 }

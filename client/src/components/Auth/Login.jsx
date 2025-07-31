@@ -15,7 +15,7 @@ const Login = ({ attemptLoginWithToken }) => {
 			const { token } = data
 			window.localStorage.setItem("token" , token)
 			attemptLoginWithToken()
-			navigate("/")
+			navigate("/projects")
 			// authenticate(window.localStorage.getItem("token"))
 			
 		} catch (error) {

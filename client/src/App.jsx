@@ -183,7 +183,7 @@ function App() {
 			<Navigation user={user} pathname={pathname} logout={logout} />
 
 			<Routes>
-				<Route path="/" element={<Home user={user} attemptLoginWithToken={attemptLoginWithToken} />} />
+				<Route path="/" element={user.id ? <Projects allProjects={allProjects?.sort((a, b) => a.org_code.localeCompare(b.org_code)) || []} allBanners={allBanners} allCreatives={allCreatives} allOrganizations={allOrganizations} user={user} /> : <Login attemptLoginWithToken={attemptLoginWithToken} />} />
 				<Route path="/projects" element={<Projects allProjects={allProjects?.sort((a, b) => a.org_code.localeCompare(b.org_code)) || []} allBanners={allBanners} allCreatives={allCreatives} allOrganizations={allOrganizations} user={user} />} />
 				<Route path="/banners" element={<Banners allBanners={allBanners} allFrames={allFrames} allUsers={allUsers} user={user} allOrganizations={allOrganizations} />} />
 				<Route path="/banners/:id" element={<SingleBanner allBanners={allBanners} allStoryboards={allStoryboards} allFrames={allFrames} user={user} />} />
