@@ -1,8 +1,16 @@
 import { all } from "axios"
 import { Link, useNavigate } from "react-router-dom"
+import gsap from "gsap"
+import { useGSAP } from "@gsap/react"
 
 const Projects = ({ allProjects, allBanners, allCreatives, allOrganizations, user }) => {
 	const navigate = useNavigate()
+
+	useGSAP(() => {
+		if (allProjects && allProjects.length > 0) {
+			gsap.from(".projectCard", 1 , { y: 1000, ease: 'power4.inOut', stagger: 0.1 , zIndex: 20});
+		}
+	}, [allProjects])
 	return (
 		<div className="projectsContainer">
 			{

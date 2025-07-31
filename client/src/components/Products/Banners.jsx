@@ -1,6 +1,14 @@
 import { Link } from "react-router-dom"
+import gsap from "gsap"
+import { useGSAP } from "@gsap/react"
 
 const Banners = ({ allBanners , allUsers , user , allOrganizations}) => {
+
+    useGSAP(() => {
+		if (allBanners.length !== 0) {
+			gsap.from(".bannerCard", .75 , { autoAlpha: 0, rotation: 45 , x: -200 , y: 100 , ease: 'power4.inOut', stagger: 0.05 });
+		}
+	}, [allBanners, allOrganizations])
 
     return (
         <div className="allBannersContainer">
