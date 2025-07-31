@@ -12,15 +12,15 @@ const createUser = async (user) => {
 
     // Check for email minimums
     // if ((!user.email.includes('@')) 
-        // ||
-        // (!user.email.includes('.com')) ||
-        // (!user.email.includes('.org')) ||
-        // (!user.email.includes('.net')) ||
-        // (!user.email.includes('.edu')) ||
-        // (!user.email.includes('.group')) ||
-        // (!user.email.includes('.gov'))
+    // ||
+    // (!user.email.includes('.com')) ||
+    // (!user.email.includes('.org')) ||
+    // (!user.email.includes('.net')) ||
+    // (!user.email.includes('.edu')) ||
+    // (!user.email.includes('.group')) ||
+    // (!user.email.includes('.gov'))
     // ) {
-        // throw Error('You must have a valid email')
+    // throw Error('You must have a valid email')
     // }
 
     // Check for spaces in password
@@ -40,7 +40,7 @@ const createUser = async (user) => {
         RETURNING *
     `
 
-  
+
     // Generate Response
     const response = await client.query(SQL, [
         uuidv4(),
@@ -53,11 +53,21 @@ const createUser = async (user) => {
         user.avatar
     ])
     return response.rows[0]
+}
 
-
+// READ
+const fetchAllUsers = async () => {
+    const SQL = `
+        SELECT *
+        FROM users
+    `
+    const response = await client.query(SQL)
+    console.log('All users:', response.rows.map(user => ({ id: user.id, first_name: user.first_name, last_name: user.last_name, email: user.email, org_code: user.org_code, is_admin: user.is_admin, avatar: user.avatar })))
+    return response.rows
 }
 
 
 module.exports = {
-    createUser
+    createUser,
+    fetchAllUsers
 }

@@ -21,7 +21,7 @@ const Login = ({ attemptLoginWithToken }) => {
 		} catch (error) {
 			console.error(error.status)
 			if (error.status == 401) {
-				alert("Your login combination was not found in our database. \n Please re-check yoru credentials or create a new account.")
+				alert("Your login combination was not found in our database. \n Please re-check your credentials or create a new account.")
 			} else if (error.status == 400) {
 				alert("Please login using a registered email address and password combination.")
 			}

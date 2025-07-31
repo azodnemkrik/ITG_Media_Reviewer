@@ -26,14 +26,14 @@ const Projects = ({ allProjects, allBanners, allCreatives, allOrganizations, use
 										</div>
 
 										{/* <h3>Organization: {user.org_code}</h3> */}
-										<h3>{project.org_code}-{project.job_number}</h3>
+										{/* <h3>{project.org_code}-{project.job_number}</h3> */}
 										{
 											allCreatives
 												.filter((creative) => creative.job_number === project.job_number)
 												.map((creative) => (
 													<>
 														<div key={creative.id} className="creativeContainer">
-															<ol>
+															<ul>
 																<h3>{creative.creative_name}</h3>
 																{
 																	allBanners
@@ -46,7 +46,7 @@ const Projects = ({ allProjects, allBanners, allCreatives, allOrganizations, use
 																			</li>
 																		))
 																}
-															</ol>
+															</ul>
 														</div>
 													</>
 
@@ -72,7 +72,7 @@ const Projects = ({ allProjects, allBanners, allCreatives, allOrganizations, use
 												.map((creative) => (
 													<>
 														<div key={creative.id} className="creativeContainer">
-															<ol>
+															<ul>
 																<h3>{creative.creative_name}</h3>
 																{
 																	allBanners
@@ -85,7 +85,7 @@ const Projects = ({ allProjects, allBanners, allCreatives, allOrganizations, use
 																			</li>
 																		))
 																}
-															</ol>
+															</ul>
 														</div>
 													</>
 

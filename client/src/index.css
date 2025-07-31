@@ -2,6 +2,7 @@ body {
 	margin: 0;
 	padding: 0;
 	font-family: 'Poppins', Helvetica, Arial, Lucida, sans-serif;
+	background-color: #E39FCE;
 }
 
 /* MAIN */
@@ -130,13 +131,29 @@ nav {
 	border-radius: 50%;
 	-webkit-border-radius: 50%;
 	border: 2px solid #FFFFFF;
-	transition: .25s ease-in-out;
-	-webkit-transition: .25s ease-in-out;
+	transition: .15s ease-in-out;
+	-webkit-transition: .15s ease-in-out;
 }
 
 a {
 	color: #1c3454;
 	text-decoration: none;
+	transition: .15s ease-in-out;
+	-webkit-transition: .15s ease-in-out;
+}
+a:hover {
+	color: #DB1C97;
+	text-decoration: none;
+}
+
+.navStyle {
+	color: #1c3454;
+	text-decoration: none;
+	transition: .15s ease-in-out;
+	-webkit-transition: .15s ease-in-out;
+}
+.navStyle:hover {
+	color: #FFFFFF;
 }
 
 .float {
@@ -147,6 +164,10 @@ a {
 .itgLogo {
 	width: 40px;
 	height: 40px;
+}
+
+.itgPink {
+	color: #DB1C97;
 }
 
 .footer {
@@ -343,22 +364,6 @@ a {
 	/* margin-left: 20px; */
 }
 
-
-.radioButtonsContainer {
-	margin-bottom: 100px;
-}
-
-.radioToggle {
-	width: 50px;
-	line-height: 100px;
-	/* display: flex; */
-	/* gap: 0px; */
-	/* margin-top: 20px; */
-	/* float: left; */
-	/* white-space:nowrap; */
-	/* background-color: #333333; */
-}
-
 .hidden {
 	display: none;
 }
@@ -430,6 +435,7 @@ a {
 	background-color: #FFFFFF;
 	box-shadow: 0px 5px 5px 3px rgba(0, 0, 0, .3);
 }
+
 
 /* REGISTER */
 .formContainer {
@@ -585,14 +591,73 @@ form button:hover {
 	padding-top: 1.5rem;
 }
 
-/* Organizations */
-.orgLogo {
-	height: 40px;
+/* ORGANIZATIONS */
+.allOrganizationsContainer{
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	/* width: 50%; */
+	flex-direction: column;
+	/* height: 100vh; */
+	/* display: grid; */
+	/* grid-template-columns: 1fr; */
+	/* grid-template-rows: 1fr min-content; */
+	/* padding-bottom: 100px; */
+	padding: 100px 0;
+	gap: 20px;
 }
-.orgLogoContainer {
-	width: 250px;
-	height: 40px;
 
+.organizationContainer {
+	width: 475px;
+	display: flex;
+	/* flex-wrap: wrap; */
+	flex-direction: column;
+	/* justify-content: flex-start; */
+	align-items: center;
+	/* flex-grow: 4; */
+	/* flex-shrink: 1; */
+	/* flex-basis: auto; */
+	/* gap: 50px; */
+	/* border: 3px solid #c48300; */
+	border-radius: 10px;
+	margin: 1.5rem 1rem .5rem 1rem;
+	padding: 2rem;
+	/* height: 300px; */
+	/* font-weight: 400; */
+	font-style: normal;
+	background-color: #FFFFFF;
+	box-shadow: 0px 5px 5px 3px rgba(0, 0, 0, .3);
+}
+
+.orgLogoInOrganization {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	width: 500px;
+}
+
+.orgLogoContainer {
+	display: flex;
+	justify-content: start;
+	/* flex-direction: column; */
+	align-items: center;
+	gap: 50px;
+	width: 600px;
+}
+.orgLogo {
+	height: 60px;
+}
+
+.userContainer {
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	/* flex-direction: column; */
+	width: 400px;
+	height: 90px;
+	gap: 20px;
 }
 
 ol, li {

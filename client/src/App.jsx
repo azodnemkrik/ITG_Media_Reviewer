@@ -21,6 +21,7 @@ function App() {
 	const [allCreatives, setAllCreatives] = useState([])
 	const [user, setUser] = useState({})
 	const [allOrganizations, setAllOrganizations] = useState([])
+	const [allUsers, setAllUsers] = useState([])
 
 	const navigate = useNavigate()
 	const location = useLocation()
@@ -41,6 +42,12 @@ function App() {
 		}
 		fetchBanners()
 		// navigate('/banners')
+		const body = document.querySelector('body');
+		body.style.backgroundImage = `url(${pinkWaves})`;
+		body.style.backgroundPosition = 'center center';
+		body.style.backgroundSize = 'cover';
+		body.style.backgroundRepeat = 'no-repeat';
+		body.style.backgroundAttachment = 'fixed';
 	}, [])
 
 	// Fetch All Frames
@@ -58,18 +65,18 @@ function App() {
 	}, [])
 
 	// Fetch All Storyboards
-	useEffect(() => {
-		const fetchStoryboards = async () => {
-			try {
-				const { data } = await axios.get('/api/banners/storyboards')
-				// console.log('STORYBOARDS:', data)
-				setAllStoryboards(data)
-			} catch (error) {
-				console.error(error)
-			}
-		}
-		fetchStoryboards()
-	}, [])
+	// useEffect(() => {
+	// 	const fetchStoryboards = async () => {
+	// 		try {
+	// 			const { data } = await axios.get('/api/banners/storyboards')
+	// 			// console.log('STORYBOARDS:', data)
+	// 			setAllStoryboards(data)
+	// 		} catch (error) {
+	// 			console.error(error)
+	// 		}
+	// 	}
+	// 	fetchStoryboards()
+	// }, [])
 
 	// Fetch All Projects
 	useEffect(() => {
@@ -96,6 +103,20 @@ function App() {
 			}
 		}
 		fetchOrganizations()
+	}, [])
+
+	// Fetch All Users
+	useEffect(() => {
+		const fetchAllUsers = async () => {
+			try {
+				const { data } = await axios.get('/api/users')
+				console.log('USERS:', data)
+				setAllUsers(data)
+			} catch (error) {
+				console.error(error)
+			}
+		}
+		fetchAllUsers()
 	}, [])
 
 	// allCreatives
@@ -160,11 +181,11 @@ function App() {
 
 			<Routes>
 				<Route path="/" element={<Home user={user} attemptLoginWithToken={attemptLoginWithToken} />} />
-				<Route path="/projects" element={<Projects allProjects={allProjects} allBanners={allBanners} allCreatives={allCreatives} allOrganizations={allOrganizations} user={user} />} />
-				<Route path="/banners" element={<Banners allBanners={allBanners} allFrames={allFrames} />} />
-				<Route path="/banners/:id" element={<SingleBanner allBanners={allBanners} allStoryboards={allStoryboards} allFrames={allFrames} />} />
+				<Route path="/projects" element={<Projects allProjects={allProjects.sort((a, b) => a.org_code.localeCompare(b.org_code))} allBanners={allBanners} allCreatives={allCreatives} allOrganizations={allOrganizations} user={user} />} />
+				<Route path="/banners" element={<Banners allBanners={allBanners} allFrames={allFrames} user={user} />} />
+				<Route path="/banners/:id" element={<SingleBanner allBanners={allBanners} allStoryboards={allStoryboards} allFrames={allFrames} user={user} />} />
 				<Route path="/register" element={<Register />} />
-				<Route path="/organizations" element={<Organizations allOrganizations={allOrganizations} />} />
+				<Route path="/organizations" element={<Organizations allOrganizations={allOrganizations} allUsers={allUsers.sort((a, b) => a.last_name.localeCompare(b.last_name))} user={user} />} />
 				<Route path="/login" element={<Login attemptLoginWithToken={attemptLoginWithToken} />} />
 
 			</Routes>

@@ -13,19 +13,45 @@ const Navigation = ({ user, pathname, logout }) => {
                         </div>
                         <div className="nav navRight">
                             {
-                                user.id ? (
+                                user.org_code == "ITG" ? (
                                     <>
-                                        <p><Link to="/projects" className={pathname === "/projects" ? "selected" : ""}>Projects</Link></p>
-                                        <p><Link to="/banners" className={pathname === "/banners" ? "selected" : ""}>Banners</Link></p>
-                                        <p><Link to="/organizations" className={pathname === "/organizations" ? "selected" : ""}>Organization</Link></p>
-                                        <p><Link to="/auth/me" className={pathname === "/account" ? "selected" : ""}>Account</Link></p>
+                                        <p><Link to="/projects" className={pathname === "/projects" ? "navStyle selected" : "navStyle"}>Projects</Link></p>
+                                        <p><Link to="/banners" className={pathname === "/banners" ? "navStyle selected" : "navStyle"}>Banners</Link></p>
+                                        <p><Link to="/organizations" className={pathname === "/organizations" ? "navStyle selected" : "navStyle"}>Organizations</Link></p>
+                                        <p><Link to="/auth/me" className={pathname === "/account" ? "navStyle selected" : "navStyle"}>Account</Link></p>
                                         <div className="userAvatarContainer">
                                             <button className="float logoutButton" onClick={logout}>Logout</button>
                                             <img className="float userAvatar" src={`data:image/png;base64, ${user.avatar}`} alt="User Avatar" />
                                         </div>
                                     </>
                                 ) : (
-                                    <p><Link to="/login">Login</Link></p>
+
+                                    user.is_admin ? (
+                                        // Show client admin links if user is an admin
+                                        <>
+                                            <p><Link to="/projects" className={pathname === "/projects" ? "navStyle selected" : "navStyle"}>Projects</Link></p>
+                                            <p><Link to="/banners" className={pathname === "/banners" ? "navStyle selected" : "navStyle"}>Banners</Link></p>
+                                            <p><Link to="/organizations" className={pathname === "/organizations" ? "navStyle selected" : "navStyle"}>Organizations</Link></p>
+                                            <p><Link to="/auth/me" className={pathname === "/account" ? "navStyle selected" : "navStyle"}>Account</Link></p>
+                                            <div className="userAvatarContainer">
+                                                <button className="float logoutButton" onClick={logout}>Logout</button>
+                                                <img className="float userAvatar" src={`data:image/png;base64, ${user.avatar}`} alt="User Avatar" />
+                                            </div>
+                                        </>
+                                    ) : (
+                                        // Show client links
+                                        <>
+                                            <p><Link to="/projects" className={pathname === "/projects" ? "navStyle selected" : "navStyle"}>Projects</Link></p>
+                                            <p><Link to="/banners" className={pathname === "/banners" ? "navStyle selected" : "navStyle"}>Banners</Link></p>
+                                            <p><Link to="/auth/me" className={pathname === "/account" ? "navStyle selected" : "navStyle"}>Account</Link></p>
+                                            <div className="userAvatarContainer">
+                                                <button className="float logoutButton" onClick={logout}>Logout</button>
+                                                <img className="float userAvatar" src={`data:image/png;base64, ${user.avatar}`} alt="User Avatar" />
+                                            </div>
+                                        </>
+                                    )
+
+                                    // <p><Link to="/login">Login</Link></p>
                                 )
                             }
                         </div>
