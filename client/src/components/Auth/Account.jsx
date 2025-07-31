@@ -51,8 +51,8 @@ const Account = ({ user, setUser }) => {
 						<div className="itgForm">
 							<div className="formTop">
 								<div className="logoAndUpdateAccount">
-									<img className="userAvatarAccount" src={`data:image/png;base64, ${user.avatar}`} alt="User Avatar" />
-									<h1>Update Account</h1>
+									<img className="userAvatarAccount formAvatar" src={`data:image/png;base64, ${user.avatar}`} alt="User Avatar" />
+									<h1>{user.first_name} {user.last_name}</h1>
 								</div>
 							</div>
 							<div className="formBottom">

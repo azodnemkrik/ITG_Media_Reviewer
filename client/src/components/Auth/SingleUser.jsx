@@ -2,13 +2,13 @@ import { useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
-const SingleUser = ({ allUsers , setAllUsers , user}) => {
+const SingleUser = ({ allUsers, setAllUsers, user }) => {
 
 	const navigate = useNavigate();
-    const params = useParams();
-    console.log("Params:", params);
+	const params = useParams();
+	console.log("Params:", params);
 
-    const editUser = allUsers.find(aUser => aUser.id === (params.id));
+	const editUser = allUsers.find(aUser => aUser.id === (params.id));
 
 	// Check user object
 	console.log("editUser:", editUser);
@@ -32,12 +32,12 @@ const SingleUser = ({ allUsers , setAllUsers , user}) => {
 			is_admin,
 			avatar
 		}
-			console.log("Submitting userData:", userData);
-			try {
+		console.log("Submitting userData:", userData);
+		try {
 			const { data } = await axios.put(`/api/users/${editUser.id}`, userData)
 			console.log(data)
 			// Update the user in the array by replacing the existing one
-			setAllUsers(allUsers.map(aUser => 
+			setAllUsers(allUsers.map(aUser =>
 				aUser.id === editUser.id ? data : aUser
 			))
 			alert('Update successful! Thank you')
@@ -91,7 +91,7 @@ const SingleUser = ({ allUsers , setAllUsers , user}) => {
 															<input className="two-column-form-left" type="text" name="org_code" defaultValue={editUser.org_code} />
 														</label>
 														<label>
-															Admin:<input className="checkBox" type="checkbox" name="is_admin" defaultChecked={editUser.is_admin}  />
+															Admin:<input className="checkBox" type="checkbox" name="is_admin" defaultChecked={editUser.is_admin} />
 														</label>
 													</div>
 												</>
@@ -100,10 +100,10 @@ const SingleUser = ({ allUsers , setAllUsers , user}) => {
 													<div className="one-column-layout">
 														<label>
 															Organization Code:<br />
-															<input className="two-column-form-left" type="text" name="org_code" defaultValue={editUser.org_code} readOnly/>
+															<input className="two-column-form-left" type="text" name="org_code" defaultValue={editUser.org_code} readOnly />
 														</label>
 														<label>
-															Admin:<input className="checkBox" type="checkbox" name="is_admin_display" defaultChecked={editUser.is_admin} disabled/>
+															Admin:<input className="checkBox" type="checkbox" name="is_admin_display" defaultChecked={editUser.is_admin} disabled />
 															<input type="hidden" name="is_admin" value={editUser.is_admin} />
 														</label>
 													</div>
@@ -116,9 +116,9 @@ const SingleUser = ({ allUsers , setAllUsers , user}) => {
 								</div>
 							</div>
 						</div>
-        			<Link to="/organizations" className="backTo"><span className="material-symbols-outlined">arrow_back</span>Back to Organizations</Link>
+						<Link to="/organizations" className="backTo"><span className="material-symbols-outlined">arrow_back</span>Back to Organizations</Link>
 					</form>
-                    
+
 				</div>
 			) : (
 				<h1>Please log in</h1>
