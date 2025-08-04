@@ -2,11 +2,11 @@ import { all } from "axios"
 import { useEffect } from "react"
 import { Link } from "react-router-dom"
 
-const Organizations = ({ allOrganizations, allUsers, user , fetchAllUsers }) => {
+const Organizations = ({ allOrganizations, allUsers, user, fetchAllUsers }) => {
 
 	useEffect(() => {
 		fetchAllUsers();
-	}, []); 
+	}, []);
 
 	const getUsersByOrgCode = (org_code) => {
 		// Check if allUsers is an array before filtering
@@ -71,11 +71,17 @@ const Organizations = ({ allOrganizations, allUsers, user , fetchAllUsers }) => 
 											<img className="orgLogo" src={organization.logo} alt={organization.name} />
 											<h4>{organization.name} ({organization.org_code})</h4>
 										</div><br />
-										{users.map((user) => (
-											<div key={user.id} className="userContainer">
-												<img className="userAvatar" src={`data:image/png;base64, ${user.avatar}`} alt="User Avatar" />
-												<p>{user.first_name} {user.last_name}
-													{user.is_admin ? (
+										{users.map((mappedUser) => (
+											<div key={mappedUser.id} className="userContainer">{
+												mappedUser.org_code === user.org_code ? (
+													<Link to={`/users/${mappedUser.id}`}>
+														<img className="userAvatar" src={`data:image/png;base64, ${mappedUser.avatar}`} alt="User Avatar" />
+													</Link>
+												) : (
+													<img className="userAvatar" src={`data:image/png;base64, ${mappedUser.avatar}`} alt="User Avatar" />
+												)}
+												<p>{mappedUser.first_name} {mappedUser.last_name}
+													{mappedUser.is_admin ? (
 														<>
 															<span class="material-symbols-outlined itgPink">
 																shield_person
