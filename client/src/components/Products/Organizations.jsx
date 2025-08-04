@@ -88,12 +88,11 @@ const Organizations = ({ allOrganizations, allUsers, user, fetchAllUsers }) => {
 															</span>
 														</>
 													) : (null)}<br />
-													<a href={`mailto:${user.email}`}>{user.email}</a>
+													<a href={`mailto:${mappedUser.email}`}>{mappedUser.email}</a>
 
 												</p>
 											</div>
-										))}
-										<hr />
+										))}<hr />
 									</div>
 								)
 							})
