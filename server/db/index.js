@@ -159,64 +159,64 @@ const seed = async () => {
     banner31, banner32, banner33, banner34, banner35, banner36, banner37, banner38 
   ] = await Promise.all([
     // Doom: The Dark Ages
-    createBanner({ creative_id: creative1.id, creative_name: creative1.creative_name, org_code:prj1.org_code, job_number: prj1.job_number , width: 300, height: 250, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/300x250/R9/index.html' }),
-    createBanner({ creative_id: creative1.id, creative_name: creative1.creative_name, org_code:prj1.org_code, job_number: prj1.job_number , width: 300, height: 600, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/300x600/R5/index.html' }),
-    createBanner({ creative_id: creative1.id, creative_name: creative1.creative_name, org_code:prj1.org_code, job_number: prj1.job_number , width: 160, height: 600, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/160x600/R6/index.html' }),
-    createBanner({ creative_id: creative1.id, creative_name: creative1.creative_name, org_code:prj1.org_code, job_number: prj1.job_number , width: 728, height: 90, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/728x90/R4/index.html' }),
-    createBanner({ creative_id: creative1.id, creative_name: creative1.creative_name, org_code:prj1.org_code, job_number: prj1.job_number , width: 970, height: 250, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/970x250/R4/index.html' }),
+    createBanner({ creative_id: creative1.id, creative_name: creative1.creative_name, org_code:prj1.org_code, job_number: prj1.job_number , width: 300, height: 250, is_mobile: false, link: 'https://www.kirk-mendoza.com/itg/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/300x250/R9/index.html' }),
+    createBanner({ creative_id: creative1.id, creative_name: creative1.creative_name, org_code:prj1.org_code, job_number: prj1.job_number , width: 300, height: 600, is_mobile: false, link: 'https://www.kirk-mendoza.com/itg/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/300x600/R5/index.html' }),
+    createBanner({ creative_id: creative1.id, creative_name: creative1.creative_name, org_code:prj1.org_code, job_number: prj1.job_number , width: 160, height: 600, is_mobile: false, link: 'https://www.kirk-mendoza.com/itg/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/160x600/R6/index.html' }),
+    createBanner({ creative_id: creative1.id, creative_name: creative1.creative_name, org_code:prj1.org_code, job_number: prj1.job_number , width: 728, height: 90, is_mobile: false, link: 'https://www.kirk-mendoza.com/itg/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/728x90/R4/index.html' }),
+    createBanner({ creative_id: creative1.id, creative_name: creative1.creative_name, org_code:prj1.org_code, job_number: prj1.job_number , width: 970, height: 250, is_mobile: false, link: 'https://www.kirk-mendoza.com/itg/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/970x250/R4/index.html' }),
 
     // Interactive Demo Pitch
-    createBanner({ creative_id: creative2.id, creative_name: creative2.creative_name, org_code:prj2.org_code, job_number: prj2.job_number , width: 300, height: 600, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/flooranddecor/23_FLOOR_012907_Interactive_Demo_Pitch/300x600/R4/Interactive_Demo_Pitch.html' }),
-
+    createBanner({ creative_id: creative2.id, creative_name: creative2.creative_name, org_code:prj2.org_code, job_number: prj2.job_number , width: 300, height: 600, is_mobile: false, link: 'https://www.kirk-mendoza.com/itg/Review/flooranddecor/23_FLOOR_012907_Interactive_Demo_Pitch/R4/Interactive_Demo_Pitch.html' }),
+    
     // CHTR Prospecting Interactive
-    createBanner({ creative_id: creative3.id, creative_name: creative3.creative_name, org_code:prj3.org_code, job_number: prj3.job_number , width: 300, height: 250, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/300x250/R6/index.html' }),
-    createBanner({ creative_id: creative3.id, creative_name: creative3.creative_name, org_code:prj3.org_code, job_number: prj3.job_number , width: 300, height: 600, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/300x600/R3/index.html' }),
-    createBanner({ creative_id: creative3.id, creative_name: creative3.creative_name, org_code:prj3.org_code, job_number: prj3.job_number , width: 160, height: 600, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/160x600/R2/index.html' }),
-    createBanner({ creative_id: creative3.id, creative_name: creative3.creative_name, org_code:prj3.org_code, job_number: prj3.job_number , width: 728, height: 90, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/728x90/R3/index.html' }),
-    createBanner({ creative_id: creative3.id, creative_name: creative3.creative_name, org_code:prj3.org_code, job_number: prj3.job_number , width: 300, height: 250, is_mobile: true, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/300x250/R7/index.html' }),
+    createBanner({ creative_id: creative3.id, creative_name: creative3.creative_name, org_code:prj3.org_code, job_number: prj3.job_number , width: 300, height: 250, is_mobile: false, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/300x250/R6/index.html' }),
+    createBanner({ creative_id: creative3.id, creative_name: creative3.creative_name, org_code:prj3.org_code, job_number: prj3.job_number , width: 300, height: 600, is_mobile: false, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/300x600/R3/index.html' }),
+    createBanner({ creative_id: creative3.id, creative_name: creative3.creative_name, org_code:prj3.org_code, job_number: prj3.job_number , width: 160, height: 600, is_mobile: false, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/160x600/R2/index.html' }),
+    createBanner({ creative_id: creative3.id, creative_name: creative3.creative_name, org_code:prj3.org_code, job_number: prj3.job_number , width: 728, height: 90, is_mobile: false, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/728x90/R3/index.html' }),
+    createBanner({ creative_id: creative3.id, creative_name: creative3.creative_name, org_code:prj3.org_code, job_number: prj3.job_number , width: 300, height: 250, is_mobile: true, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/300x250/R7/index.html' }),
 
     // CHTR Remarketing Interactive
-    createBanner({ creative_id: creative4.id, creative_name: creative4.creative_name, org_code:prj3.org_code, job_number: prj3.job_number , width: 300, height: 600, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/300x600/R3/index.html' }),
-    createBanner({ creative_id: creative4.id, creative_name: creative4.creative_name, org_code:prj3.org_code, job_number: prj3.job_number , width: 160, height: 600, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/160x600/R3/index.html' }),
-    createBanner({ creative_id: creative4.id, creative_name: creative4.creative_name, org_code:prj3.org_code, job_number: prj3.job_number , width: 728, height: 90, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/728x90/R2/index.html' }),
-    createBanner({ creative_id: creative4.id, creative_name: creative4.creative_name, org_code:prj3.org_code, job_number: prj3.job_number , width: 300, height: 250, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Hotspot/Prospecting_300x250_V1/R1/index.html' }),
-    createBanner({ creative_id: creative4.id, creative_name: creative4.creative_name, org_code:prj3.org_code, job_number: prj3.job_number , width: 300, height: 250, is_mobile: true, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Hotspot/Remarketing_300x250_V2/R5/index.html' }),
+    createBanner({ creative_id: creative4.id, creative_name: creative4.creative_name, org_code:prj3.org_code, job_number: prj3.job_number , width: 300, height: 600, is_mobile: false, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/300x600/R3/index.html' }),
+    createBanner({ creative_id: creative4.id, creative_name: creative4.creative_name, org_code:prj3.org_code, job_number: prj3.job_number , width: 160, height: 600, is_mobile: false, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/160x600/R3/index.html' }),
+    createBanner({ creative_id: creative4.id, creative_name: creative4.creative_name, org_code:prj3.org_code, job_number: prj3.job_number , width: 728, height: 90, is_mobile: false, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/728x90/R2/index.html' }),
+    createBanner({ creative_id: creative4.id, creative_name: creative4.creative_name, org_code:prj3.org_code, job_number: prj3.job_number , width: 300, height: 250, is_mobile: false, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Hotspot/Prospecting_300x250_V1/R1/index.html' }),
+    createBanner({ creative_id: creative4.id, creative_name: creative4.creative_name, org_code:prj3.org_code, job_number: prj3.job_number , width: 300, height: 250, is_mobile: true, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Hotspot/Remarketing_300x250_V2/R5/index.html' }),
 
     // XBox Q2 - We Got You
-    createBanner({ creative_id: creative5.id, creative_name: creative5.creative_name, org_code:prj5.org_code, job_number: prj5.job_number , width: 300, height: 250, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_02_XboxQ2Campaigns/WeGotYouSuperSet/300x250/cod/R6/We_Got_You_300x250.html' }),
-    createBanner({ creative_id: creative5.id, creative_name: creative5.creative_name, org_code:prj5.org_code, job_number: prj5.job_number , width: 300, height: 600, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_02_XboxQ2Campaigns/WeGotYouSuperSet/300x600/LeagueOfLegends/LoL/R3/index.html' }),
-    createBanner({ creative_id: creative5.id, creative_name: creative5.creative_name, org_code:prj5.org_code, job_number: prj5.job_number , width: 160, height: 600, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_02_XboxQ2Campaigns/WeGotYouSuperSet/160x600/Sims4/R2/We_Got_You_160x600.html' }),
-    createBanner({ creative_id: creative5.id, creative_name: creative5.creative_name, org_code:prj5.org_code, job_number: prj5.job_number , width: 728, height: 90, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_02_XboxQ2Campaigns/WeGotYouSuperSet/728x90/stalker2/R5/index.html' }),
-    createBanner({ creative_id: creative5.id, creative_name: creative5.creative_name, org_code:prj5.org_code, job_number: prj5.job_number , width: 970, height: 250, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_02_XboxQ2Campaigns/WeGotYouSuperSet/970x250/indianajones/R4/index.html' }),
-    createBanner({ creative_id: creative5.id, creative_name: creative5.creative_name, org_code:prj5.org_code, job_number: prj5.job_number , width: 320, height: 50, is_mobile: true, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_02_XboxQ2Campaigns/WeGotYouSuperSet/320x50/R4/We_Got_You_Mobile_320x50.html' }),
+    createBanner({ creative_id: creative5.id, creative_name: creative5.creative_name, org_code:prj5.org_code, job_number: prj5.job_number , width: 300, height: 250, is_mobile: false, link: 'https://www.kirk-mendoza.com/itg/Review/MSTX_100000_02_XboxQ2Campaigns/WeGotYouSuperSet/300x250/cod/R6/We_Got_You_300x250.html' }),
+    createBanner({ creative_id: creative5.id, creative_name: creative5.creative_name, org_code:prj5.org_code, job_number: prj5.job_number , width: 300, height: 600, is_mobile: false, link: 'https://www.kirk-mendoza.com/itg/Review/MSTX_100000_02_XboxQ2Campaigns/WeGotYouSuperSet/300x600/LeagueOfLegends/LoL/R3/index.html' }),
+    createBanner({ creative_id: creative5.id, creative_name: creative5.creative_name, org_code:prj5.org_code, job_number: prj5.job_number , width: 160, height: 600, is_mobile: false, link: 'https://www.kirk-mendoza.com/itg/Review/MSTX_100000_02_XboxQ2Campaigns/WeGotYouSuperSet/160x600/Sims4/R2/We_Got_You_160x600.html' }),
+    createBanner({ creative_id: creative5.id, creative_name: creative5.creative_name, org_code:prj5.org_code, job_number: prj5.job_number , width: 728, height: 90, is_mobile: false, link: 'https://www.kirk-mendoza.com/itg/Review/MSTX_100000_02_XboxQ2Campaigns/WeGotYouSuperSet/728x90/stalker2/R5/index.html' }),
+    createBanner({ creative_id: creative5.id, creative_name: creative5.creative_name, org_code:prj5.org_code, job_number: prj5.job_number , width: 970, height: 250, is_mobile: false, link: 'https://www.kirk-mendoza.com/itg/Review/MSTX_100000_02_XboxQ2Campaigns/WeGotYouSuperSet/970x250/indianajones/R4/index.html' }),
+    createBanner({ creative_id: creative5.id, creative_name: creative5.creative_name, org_code:prj5.org_code, job_number: prj5.job_number , width: 320, height: 50, is_mobile: true, link: 'https://www.kirk-mendoza.com/itg/Review/MSTX_100000_02_XboxQ2Campaigns/WeGotYouSuperSet/320x50/R4/We_Got_You_Mobile_320x50.html' }),
 
     // FY24_BTS_2024
-    createBanner({ creative_id: creative6.id, creative_name: creative6.creative_name, org_code:prj6.org_code, job_number: prj6.job_number , width: 300, height: 250, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/24_MSTH_000112_FY24_BTS_2024/Interactive/300x250/R10/M365_FY25Q1BTS_USA_300x250_BAN_4SquareINT_EN_NA_Standard_ANI_TRY_NA_1.html' }),
+    createBanner({ creative_id: creative6.id, creative_name: creative6.creative_name, org_code:prj6.org_code, job_number: prj6.job_number , width: 300, height: 250, is_mobile: false, link: 'https://www.kirk-mendoza.com/itg/Review/24_MSTH_000112_FY24_BTS_2024/Interactive/300x250/R10/M365_FY25Q1BTS_USA_300x250_BAN_4SquareINT_EN_NA_Standard_ANI_TRY_NA_1.html' }),
 
     // FY24_New_Year_2024
-    createBanner({ creative_id: creative7.id, creative_name: creative7.creative_name, org_code:prj7.org_code, job_number: prj7.job_number , width: 300, height: 250, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/086H-0101_FY24_NewYear%202024/Interactive/300x250/R13/M365_FY24Q3NewYear_USA_300x250_BAN_INT_EN_NA_Standard_ANI_SUB_NA_1.html' }),
+    createBanner({ creative_id: creative7.id, creative_name: creative7.creative_name, org_code:prj7.org_code, job_number: prj7.job_number , width: 300, height: 250, is_mobile: false, link: 'https://www.kirk-mendoza.com/itg/Review/086H-0101_FY24_NewYear%202024/Interactive/300x250/R13/M365_FY24Q3NewYear_USA_300x250_BAN_INT_EN_NA_Standard_ANI_SUB_NA_1.html' }),
 
     // FY24 Holiday 2023
-    createBanner({ creative_id: creative8.id, creative_name: creative8.creative_name, org_code:prj8.org_code, job_number: prj8.job_number , width: 300, height: 250, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/086H-0099_FY24%20Holiday%202023/Interactive/300x250/R7/Interactive_300x250.html' }),
-    createBanner({ creative_id: creative8.id, creative_name: creative8.creative_name, org_code:prj8.org_code, job_number: prj8.job_number , width: 300, height: 600, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/086H-0099_FY24%20Holiday%202023/Interactive/300x600/R5/Interactive_300x600.html' }),
-    createBanner({ creative_id: creative8.id, creative_name: creative8.creative_name, org_code:prj8.org_code, job_number: prj8.job_number , width: 160, height: 600, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/086H-0099_FY24%20Holiday%202023/Interactive/160x600/R8/M365_FY23Q4BTS_USA_160x600_BAN_INTFourSquare_EN_NA_Standard_ANI_SUB_NA_1.html' }),
-    createBanner({ creative_id: creative8.id, creative_name: creative8.creative_name, org_code:prj8.org_code, job_number: prj8.job_number , width: 728, height: 90, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/086H-0099_FY24%20Holiday%202023/Interactive/728x90/R3/M365_FY23Q4BTS_USA_728x90_BAN_INTFourSquare_EN_NA_Standard_ANI_SUB_NA_1.html' }),
+    createBanner({ creative_id: creative8.id, creative_name: creative8.creative_name, org_code:prj8.org_code, job_number: prj8.job_number , width: 300, height: 250, is_mobile: false, link: 'https://www.kirk-mendoza.com/itg/Review/086H-0099_FY24%20Holiday%202023/Interactive/300x250/R7/Interactive_300x250.html' }),
+    createBanner({ creative_id: creative8.id, creative_name: creative8.creative_name, org_code:prj8.org_code, job_number: prj8.job_number , width: 300, height: 600, is_mobile: false, link: 'https://www.kirk-mendoza.com/itg/Review/086H-0099_FY24%20Holiday%202023/Interactive/300x600/R5/Interactive_300x600.html' }),
+    createBanner({ creative_id: creative8.id, creative_name: creative8.creative_name, org_code:prj8.org_code, job_number: prj8.job_number , width: 160, height: 600, is_mobile: false, link: 'https://www.kirk-mendoza.com/itg/Review/086H-0099_FY24%20Holiday%202023/Interactive/160x600/R8/M365_FY23Q4BTS_USA_160x600_BAN_INTFourSquare_EN_NA_Standard_ANI_SUB_NA_1.html' }),
+    createBanner({ creative_id: creative8.id, creative_name: creative8.creative_name, org_code:prj8.org_code, job_number: prj8.job_number , width: 728, height: 90, is_mobile: false, link: 'https://www.kirk-mendoza.com/itg/Review/086H-0099_FY24%20Holiday%202023/Interactive/728x90/R3/M365_FY23Q4BTS_USA_728x90_BAN_INTFourSquare_EN_NA_Standard_ANI_SUB_NA_1.html' }),
 
     // XBox Starfield Forza Performance
-    createBanner({ creative_id: creative9.id, creative_name: creative9.creative_name, org_code:prj9.org_code, job_number: prj9.job_number , width: 300, height: 600, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/086X-0017_FY24H1Q1_Xbox%20Starfield%20Forza%20Portfolio%20Performance/Social_Media_Inspired_Interactive_Shell/300x600/R7/Social_Media_Inspired_Interactive_Shell_300x600.html' }),
+    createBanner({ creative_id: creative9.id, creative_name: creative9.creative_name, org_code:prj9.org_code, job_number: prj9.job_number , width: 300, height: 600, is_mobile: false, link: 'https://www.kirk-mendoza.com/itg/Review/086X-0017_FY24H1Q1_Xbox%20Starfield%20Forza%20Portfolio%20Performance/Social_Media_Inspired_Interactive_Shell/300x600/R7/Social_Media_Inspired_Interactive_Shell_300x600.html' }),
 
     // Neutral Evergreen
-    createBanner({ creative_id: creative10.id, creative_name: creative10.creative_name, org_code:prj9.org_code, job_number: prj9.job_number , width: 300, height: 250, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/086H-0093_FY23Q4_Neutral%20Evergreen/Interactive/300x250/R10/M365_FY23Q4NeutralEvergreen_USA_300x250_BAN_INTWheel_EN_NA_Standard_ANI_SUB_NA_1.html' }),
-    createBanner({ creative_id: creative10.id, creative_name: creative10.creative_name, org_code:prj9.org_code, job_number: prj9.job_number , width: 300, height: 600, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/086H-0093_FY23Q4_Neutral%20Evergreen/Interactive/300x600/R5/Interactive_300x600.html' }),
-    createBanner({ creative_id: creative10.id, creative_name: creative10.creative_name, org_code:prj9.org_code, job_number: prj9.job_number , width: 160, height: 600, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/086H-0093_FY23Q4_Neutral%20Evergreen/Interactive/160x600/R4/Interactive_160x600.html' }),
-    createBanner({ creative_id: creative10.id, creative_name: creative10.creative_name, org_code:prj9.org_code, job_number: prj9.job_number , width: 728, height: 90, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/086H-0093_FY23Q4_Neutral%20Evergreen/Interactive/728x90/R5/Interactive_728x90.html' }),
+    createBanner({ creative_id: creative10.id, creative_name: creative10.creative_name, org_code:prj9.org_code, job_number: prj9.job_number , width: 300, height: 250, is_mobile: false, link: 'https://www.kirk-mendoza.com/itg/Review/086H-0093_FY23Q4_Neutral%20Evergreen/Interactive/300x250/R10/M365_FY23Q4NeutralEvergreen_USA_300x250_BAN_INTWheel_EN_NA_Standard_ANI_SUB_NA_1.html' }),
+    createBanner({ creative_id: creative10.id, creative_name: creative10.creative_name, org_code:prj9.org_code, job_number: prj9.job_number , width: 300, height: 600, is_mobile: false, link: 'https://www.kirk-mendoza.com/itg/Review/086H-0093_FY23Q4_Neutral%20Evergreen/Interactive/300x600/R5/Interactive_300x600.html' }),
+    createBanner({ creative_id: creative10.id, creative_name: creative10.creative_name, org_code:prj9.org_code, job_number: prj9.job_number , width: 160, height: 600, is_mobile: false, link: 'https://www.kirk-mendoza.com/itg/Review/086H-0093_FY23Q4_Neutral%20Evergreen/Interactive/160x600/R4/Interactive_160x600.html' }),
+    createBanner({ creative_id: creative10.id, creative_name: creative10.creative_name, org_code:prj9.org_code, job_number: prj9.job_number , width: 728, height: 90, is_mobile: false, link: 'https://www.kirk-mendoza.com/itg/Review/086H-0093_FY23Q4_Neutral%20Evergreen/Interactive/728x90/R5/Interactive_728x90.html' }),
 
     // XBox Q2 - Avowed
-    createBanner({ creative_id: creative11.id, creative_name: creative11.creative_name, org_code:prj4.org_code, job_number: prj4.job_number , width: 160, height: 600, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_02_XboxQ2Campaigns/Alabama/160x600/R6/index.html' }),
-    createBanner({ creative_id: creative11.id, creative_name: creative11.creative_name, org_code:prj4.org_code, job_number: prj4.job_number , width: 300, height: 250, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_02_XboxQ2Campaigns/Alabama/300x250/R12/index.html' }),
-    createBanner({ creative_id: creative11.id, creative_name: creative11.creative_name, org_code:prj4.org_code, job_number: prj4.job_number , width: 300, height: 600, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_02_XboxQ2Campaigns/Alabama/300x600/R6/index.html' }),
-    createBanner({ creative_id: creative11.id, creative_name: creative11.creative_name, org_code:prj4.org_code, job_number: prj4.job_number , width: 728, height: 90, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_02_XboxQ2Campaigns/Alabama/728x90/R3/index.html' }),
-    createBanner({ creative_id: creative11.id, creative_name: creative11.creative_name, org_code:prj4.org_code, job_number: prj4.job_number , width: 970, height: 250, is_mobile: false, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_02_XboxQ2Campaigns/Alabama/970x250/R5/index.html' }),
+    createBanner({ creative_id: creative11.id, creative_name: creative11.creative_name, org_code:prj4.org_code, job_number: prj4.job_number , width: 160, height: 600, is_mobile: false, link: 'https://www.kirk-mendoza.com/itg/Review/MSTX_100000_02_XboxQ2Campaigns/Alabama/160x600/R6/index.html' }),
+    createBanner({ creative_id: creative11.id, creative_name: creative11.creative_name, org_code:prj4.org_code, job_number: prj4.job_number , width: 300, height: 250, is_mobile: false, link: 'https://www.kirk-mendoza.com/itg/Review/MSTX_100000_02_XboxQ2Campaigns/Alabama/300x250/R12/index.html' }),
+    createBanner({ creative_id: creative11.id, creative_name: creative11.creative_name, org_code:prj4.org_code, job_number: prj4.job_number , width: 300, height: 600, is_mobile: false, link: 'https://www.kirk-mendoza.com/itg/Review/MSTX_100000_02_XboxQ2Campaigns/Alabama/300x600/R6/index.html' }),
+    createBanner({ creative_id: creative11.id, creative_name: creative11.creative_name, org_code:prj4.org_code, job_number: prj4.job_number , width: 728, height: 90, is_mobile: false, link: 'https://www.kirk-mendoza.com/itg/Review/MSTX_100000_02_XboxQ2Campaigns/Alabama/728x90/R3/index.html' }),
+    createBanner({ creative_id: creative11.id, creative_name: creative11.creative_name, org_code:prj4.org_code, job_number: prj4.job_number , width: 970, height: 250, is_mobile: false, link: 'https://www.kirk-mendoza.com/itg/Review/MSTX_100000_02_XboxQ2Campaigns/Alabama/970x250/R5/index.html' }),
 
   ])
   
@@ -231,109 +231,109 @@ const seed = async () => {
     frame61, frame62, frame63, frame64, frame65
   ] = await Promise.all([
     // Doom: The Dark Ages, 300x250
-    createFrame({ banner_id: banner1.id, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/300x250/R9/ref/ref1.png' }),
-    createFrame({ banner_id: banner1.id, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/300x250/R9/ref/ref2.png' }),
+    createFrame({ banner_id: banner1.id, link: 'https://www.kirk-mendoza.com/itg/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/300x250/R9/ref/ref1.png' }),
+    createFrame({ banner_id: banner1.id, link: 'https://www.kirk-mendoza.com/itg/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/300x250/R9/ref/ref2.png' }),
 
     // Doom: The Dark Ages, 300x600
-    createFrame({ banner_id: banner2.id, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/300x600/R5/ref/ref1.png' }),
-    createFrame({ banner_id: banner2.id, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/300x600/R5/ref/ref2.png' }),
+    createFrame({ banner_id: banner2.id, link: 'https://www.kirk-mendoza.com/itg/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/300x600/R5/ref/ref1.png' }),
+    createFrame({ banner_id: banner2.id, link: 'https://www.kirk-mendoza.com/itg/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/300x600/R5/ref/ref2.png' }),
 
     // Doom: The Dark Ages, 160x600
-    createFrame({ banner_id: banner3.id, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/160x600/R6/ref/ref1.png' }),
-    createFrame({ banner_id: banner3.id, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/160x600/R6/ref/ref2.png' }),
+    createFrame({ banner_id: banner3.id, link: 'https://www.kirk-mendoza.com/itg/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/160x600/R6/ref/ref1.png' }),
+    createFrame({ banner_id: banner3.id, link: 'https://www.kirk-mendoza.com/itg/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/160x600/R6/ref/ref2.png' }),
 
     // Doom: The Dark Ages, 728x90
-    createFrame({ banner_id: banner4.id, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/728x90/R4/ref/ref1.png' }),
-    createFrame({ banner_id: banner4.id, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/728x90/R4/ref/ref2.png' }),
+    createFrame({ banner_id: banner4.id, link: 'https://www.kirk-mendoza.com/itg/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/728x90/R4/ref/ref1.png' }),
+    createFrame({ banner_id: banner4.id, link: 'https://www.kirk-mendoza.com/itg/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/728x90/R4/ref/ref2.png' }),
 
     // Doom: The Dark Ages, 970x250
-    createFrame({ banner_id: banner5.id, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/970x250/R4/ref/ref1.png' }),
-    createFrame({ banner_id: banner5.id, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/970x250/R4/ref/ref2.png' }),
+    createFrame({ banner_id: banner5.id, link: 'https://www.kirk-mendoza.com/itg/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/970x250/R4/ref/ref1.png' }),
+    createFrame({ banner_id: banner5.id, link: 'https://www.kirk-mendoza.com/itg/Review/MSTX_100000_03_XboxQ3Campaigns/Titan/970x250/R4/ref/ref2.png' }),
 
     // CHTR Prospecting Interactive, 300x250
-    createFrame({ banner_id: banner7.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/300x250/R6/ref/ref1.png' }),
-    createFrame({ banner_id: banner7.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/300x250/R6/ref/ref2.png' }),
-    createFrame({ banner_id: banner7.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/300x250/R6/ref/ref3.png' }),
-    createFrame({ banner_id: banner7.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/300x250/R6/ref/ref4.png' }),
-    createFrame({ banner_id: banner7.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/300x250/R6/ref/ref5.png' }),
+    createFrame({ banner_id: banner7.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/300x250/R6/ref/ref1.png' }),
+    createFrame({ banner_id: banner7.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/300x250/R6/ref/ref2.png' }),
+    createFrame({ banner_id: banner7.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/300x250/R6/ref/ref3.png' }),
+    createFrame({ banner_id: banner7.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/300x250/R6/ref/ref4.png' }),
+    createFrame({ banner_id: banner7.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/300x250/R6/ref/ref5.png' }),
 
     // CHTR Prospecting Interactive, 300x600
-    createFrame({ banner_id: banner8.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/300x600/R3/ref/ref1.png' }),
-    createFrame({ banner_id: banner8.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/300x600/R3/ref/ref2.png' }),
-    createFrame({ banner_id: banner8.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/300x600/R3/ref/ref3.png' }),
-    createFrame({ banner_id: banner8.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/300x600/R3/ref/ref4.png' }),
-    createFrame({ banner_id: banner8.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/300x600/R3/ref/ref5.png' }),
+    createFrame({ banner_id: banner8.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/300x600/R3/ref/ref1.png' }),
+    createFrame({ banner_id: banner8.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/300x600/R3/ref/ref2.png' }),
+    createFrame({ banner_id: banner8.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/300x600/R3/ref/ref3.png' }),
+    createFrame({ banner_id: banner8.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/300x600/R3/ref/ref4.png' }),
+    createFrame({ banner_id: banner8.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/300x600/R3/ref/ref5.png' }),
 
     // CHTR Prospecting Interactive, 160x600
-    createFrame({ banner_id: banner9.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/160x600/R2/ref/ref1.png' }),
-    createFrame({ banner_id: banner9.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/160x600/R2/ref/ref2.png' }),
-    createFrame({ banner_id: banner9.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/160x600/R2/ref/ref3.png' }),
-    createFrame({ banner_id: banner9.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/160x600/R2/ref/ref4.png' }),
-    createFrame({ banner_id: banner9.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/160x600/R2/ref/ref5.png' }),
+    createFrame({ banner_id: banner9.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/160x600/R2/ref/ref1.png' }),
+    createFrame({ banner_id: banner9.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/160x600/R2/ref/ref2.png' }),
+    createFrame({ banner_id: banner9.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/160x600/R2/ref/ref3.png' }),
+    createFrame({ banner_id: banner9.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/160x600/R2/ref/ref4.png' }),
+    createFrame({ banner_id: banner9.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/160x600/R2/ref/ref5.png' }),
 
     // CHTR Prospecting Interactive, 728x90
-    createFrame({ banner_id: banner10.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/728x90/R3/ref/ref1.png' }),
-    createFrame({ banner_id: banner10.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/728x90/R3/ref/ref2.png' }),
-    createFrame({ banner_id: banner10.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/728x90/R3/ref/ref3.png' }),
-    createFrame({ banner_id: banner10.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/728x90/R3/ref/ref4.png' }),
-    createFrame({ banner_id: banner10.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/728x90/R3/ref/ref5.png' }),
+    createFrame({ banner_id: banner10.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/728x90/R3/ref/ref1.png' }),
+    createFrame({ banner_id: banner10.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/728x90/R3/ref/ref2.png' }),
+    createFrame({ banner_id: banner10.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/728x90/R3/ref/ref3.png' }),
+    createFrame({ banner_id: banner10.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/728x90/R3/ref/ref4.png' }),
+    createFrame({ banner_id: banner10.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Prospecting_V1/728x90/R3/ref/ref5.png' }),
 
     // CHTR Prospecting Interactive, 300x250 Mobile
-    createFrame({ banner_id: banner11.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/300x250/R7/ref/ref1.png' }),
-    createFrame({ banner_id: banner11.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/300x250/R7/ref/ref2.png' }),
-    createFrame({ banner_id: banner11.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/300x250/R7/ref/ref3.png' }),
-    createFrame({ banner_id: banner11.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/300x250/R7/ref/ref4.png' }),
-    createFrame({ banner_id: banner11.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/300x250/R7/ref/ref5.png' }),
+    createFrame({ banner_id: banner11.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/300x250/R7/ref/ref1.png' }),
+    createFrame({ banner_id: banner11.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/300x250/R7/ref/ref2.png' }),
+    createFrame({ banner_id: banner11.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/300x250/R7/ref/ref3.png' }),
+    createFrame({ banner_id: banner11.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/300x250/R7/ref/ref4.png' }),
+    createFrame({ banner_id: banner11.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/300x250/R7/ref/ref5.png' }),
 
     // CHTR Remarketing Interactive, 300x600
-    createFrame({ banner_id: banner12.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/300x600/R3/ref/ref1.png' }),
-    createFrame({ banner_id: banner12.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/300x600/R3/ref/ref2.png' }),
-    createFrame({ banner_id: banner12.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/300x600/R3/ref/ref3.png' }),
-    createFrame({ banner_id: banner12.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/300x600/R3/ref/ref4.png' }),
-    createFrame({ banner_id: banner12.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/300x600/R3/ref/ref5.png' }),
+    createFrame({ banner_id: banner12.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/300x600/R3/ref/ref1.png' }),
+    createFrame({ banner_id: banner12.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/300x600/R3/ref/ref2.png' }),
+    createFrame({ banner_id: banner12.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/300x600/R3/ref/ref3.png' }),
+    createFrame({ banner_id: banner12.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/300x600/R3/ref/ref4.png' }),
+    createFrame({ banner_id: banner12.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/300x600/R3/ref/ref5.png' }),
 
     // CHTR Remarketing Interactive, 160x600
-    createFrame({ banner_id: banner13.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/160x600/R3/ref/ref1.png' }),
-    createFrame({ banner_id: banner13.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/160x600/R3/ref/ref2.png' }),
-    createFrame({ banner_id: banner13.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/160x600/R3/ref/ref3.png' }),
-    createFrame({ banner_id: banner13.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/160x600/R3/ref/ref4.png' }),
-    createFrame({ banner_id: banner13.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/160x600/R3/ref/ref5.png' }),
+    createFrame({ banner_id: banner13.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/160x600/R3/ref/ref1.png' }),
+    createFrame({ banner_id: banner13.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/160x600/R3/ref/ref2.png' }),
+    createFrame({ banner_id: banner13.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/160x600/R3/ref/ref3.png' }),
+    createFrame({ banner_id: banner13.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/160x600/R3/ref/ref4.png' }),
+    createFrame({ banner_id: banner13.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/160x600/R3/ref/ref5.png' }),
 
     // CHTR Remarketing Interactive, 728x90
-    createFrame({ banner_id: banner14.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/728x90/R2/ref/ref1.png' }),
-    createFrame({ banner_id: banner14.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/728x90/R2/ref/ref2.png' }),
-    createFrame({ banner_id: banner14.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/728x90/R2/ref/ref3.png' }),
-    createFrame({ banner_id: banner14.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/728x90/R2/ref/ref4.png' }),
-    createFrame({ banner_id: banner14.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/728x90/R2/ref/ref5.png' }),
+    createFrame({ banner_id: banner14.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/728x90/R2/ref/ref1.png' }),
+    createFrame({ banner_id: banner14.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/728x90/R2/ref/ref2.png' }),
+    createFrame({ banner_id: banner14.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/728x90/R2/ref/ref3.png' }),
+    createFrame({ banner_id: banner14.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/728x90/R2/ref/ref4.png' }),
+    createFrame({ banner_id: banner14.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Quad_Remarketing_V1/728x90/R2/ref/ref5.png' }),
 
     // CHTR Remarketing Interactive, 300x250 
-    createFrame({ banner_id: banner15.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Hotspot/Prospecting_300x250_V1/R1/ref/ref1.png' }),
-    createFrame({ banner_id: banner15.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Hotspot/Prospecting_300x250_V1/R1/ref/ref2.png' }),
-    createFrame({ banner_id: banner15.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Hotspot/Prospecting_300x250_V1/R1/ref/ref3.png' }),
-    createFrame({ banner_id: banner15.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Hotspot/Prospecting_300x250_V1/R1/ref/ref4.png' }),
-    createFrame({ banner_id: banner15.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Hotspot/Prospecting_300x250_V1/R1/ref/ref5.png' }),
-    createFrame({ banner_id: banner15.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Hotspot/Prospecting_300x250_V1/R1/ref/ref6.png' }),
+    createFrame({ banner_id: banner15.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Hotspot/Prospecting_300x250_V1/R1/ref/ref1.png' }),
+    createFrame({ banner_id: banner15.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Hotspot/Prospecting_300x250_V1/R1/ref/ref2.png' }),
+    createFrame({ banner_id: banner15.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Hotspot/Prospecting_300x250_V1/R1/ref/ref3.png' }),
+    createFrame({ banner_id: banner15.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Hotspot/Prospecting_300x250_V1/R1/ref/ref4.png' }),
+    createFrame({ banner_id: banner15.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Hotspot/Prospecting_300x250_V1/R1/ref/ref5.png' }),
+    createFrame({ banner_id: banner15.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Hotspot/Prospecting_300x250_V1/R1/ref/ref6.png' }),
     
     // CHTR Remarketing Interactive, 300x250 
-    createFrame({ banner_id: banner16.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Hotspot/Remarketing_300x250_V2/R5/ref/ref1.png' }),
-    createFrame({ banner_id: banner16.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Hotspot/Remarketing_300x250_V2/R5/ref/ref2.png' }),
-    createFrame({ banner_id: banner16.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Hotspot/Remarketing_300x250_V2/R5/ref/ref3.png' }),
-    createFrame({ banner_id: banner16.id, link: 'https://purered.haddadandpartners.com/Review/CHTR-015479-2025_SMB/Interactive_Hotspot/Remarketing_300x250_V2/R5/ref/ref4.png' }),
+    createFrame({ banner_id: banner16.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Hotspot/Remarketing_300x250_V2/R5/ref/ref1.png' }),
+    createFrame({ banner_id: banner16.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Hotspot/Remarketing_300x250_V2/R5/ref/ref2.png' }),
+    createFrame({ banner_id: banner16.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Hotspot/Remarketing_300x250_V2/R5/ref/ref3.png' }),
+    createFrame({ banner_id: banner16.id, link: 'https://www.kirk-mendoza.com/itg/Review/CHTR-015479-2025_SMB/Interactive_Hotspot/Remarketing_300x250_V2/R5/ref/ref4.png' }),
     
     // XBox Q2 - We Got You, 300x250 
-    createFrame({ banner_id: banner17.id, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_02_XboxQ2Campaigns/WeGotYouSuperSet/300x250/cod/R6/ref/ref1.png' }),
+    createFrame({ banner_id: banner17.id, link: 'https://www.kirk-mendoza.com/itg/Review/MSTX_100000_02_XboxQ2Campaigns/WeGotYouSuperSet/300x250/cod/R6/ref/ref1.png' }),
 
     // XBox Q2 - We Got You, 300x600 
-    createFrame({ banner_id: banner18.id, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_02_XboxQ2Campaigns/WeGotYouSuperSet/300x600/LeagueOfLegends/LoL/R3/ref/ref1.png' }),
+    createFrame({ banner_id: banner18.id, link: 'https://www.kirk-mendoza.com/itg/Review/MSTX_100000_02_XboxQ2Campaigns/WeGotYouSuperSet/300x600/LeagueOfLegends/LoL/R3/ref/ref1.png' }),
 
     // XBox Q2 - We Got You, 160x600 
-    createFrame({ banner_id: banner19.id, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_02_XboxQ2Campaigns/WeGotYouSuperSet/160x600/Sims4/R2/ref/ref1.png' }),
+    createFrame({ banner_id: banner19.id, link: 'https://www.kirk-mendoza.com/itg/Review/MSTX_100000_02_XboxQ2Campaigns/WeGotYouSuperSet/160x600/Sims4/R2/ref/ref1.png' }),
 
     // XBox Q2 - We Got You, 728x90 
-    createFrame({ banner_id: banner20.id, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_02_XboxQ2Campaigns/WeGotYouSuperSet/728x90/stalker2/R5/ref/ref1.png' }),
+    createFrame({ banner_id: banner20.id, link: 'https://www.kirk-mendoza.com/itg/Review/MSTX_100000_02_XboxQ2Campaigns/WeGotYouSuperSet/728x90/stalker2/R5/ref/ref1.png' }),
 
     // XBox Q2 - We Got You, 970x250 
-    createFrame({ banner_id: banner21.id, link: 'https://purered.haddadandpartners.com/Review/MSTX_100000_02_XboxQ2Campaigns/WeGotYouSuperSet/970x250/indianajones/R4/ref/ref1.png' }),
+    createFrame({ banner_id: banner21.id, link: 'https://www.kirk-mendoza.com/itg/Review/MSTX_100000_02_XboxQ2Campaigns/WeGotYouSuperSet/970x250/indianajones/R4/ref/ref1.png' }),
 
     // XBox Q2 - We Got You, 320x50 - NONE
      ])
